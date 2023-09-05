@@ -1,7 +1,7 @@
 import { render } from '@react-email/render';
 import { promises as fs } from 'fs';
 import { dirname, join as pathJoin } from 'path';
-import { CONTENT_DIR, getEmails } from '../../../utils/get-emails';
+import { CONTENT_DIR, getEmails } from '@/utils/get-emails';
 import Preview from './preview';
 
 export const dynamicParams = true;
@@ -34,12 +34,15 @@ export default async function Page({ params }) {
   const exportTemplateFile: string = await fs.readFile(path, {
     encoding: 'utf-8',
   });
-  const importPath = exportTemplateFile.match(/import Mail from '(.+)';/)?.[1];
-  const originalFilePath = pathJoin(dirname(path), importPath);
+  // const importPath = exportTemplateFile.match(/import Mail from '(.+)';/)?.[1];
+  // const originalFilePath = pathJoin(dirname(path), importPath);
 
-  const reactMarkup: string = await fs.readFile(originalFilePath, {
+  const reactMarkup: string = await fs.readFile(path, {
     encoding: 'utf-8',
   });
+  // const reactMarkup: string = await fs.readFile(originalFilePath, {
+  //   encoding: 'utf-8',
+  // });
 
   return (
     <Preview

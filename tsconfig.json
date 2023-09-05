@@ -26,8 +26,8 @@
     "strictNullChecks": true,
      "paths": {
       "@/*": ["./src/*"],
-      "@/public/*": ["./public/*"],
-      "@/components/*": ["./src/components/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/emails/*": ["./emails/*"],
       "@/types/*": ["./types.d.ts"]
     }
   },
