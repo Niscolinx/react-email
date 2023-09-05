@@ -30,19 +30,12 @@ export default async function Page({ params }) {
   const basePath = pathJoin(process.cwd(), CONTENT_DIR);
   const path = pathJoin(basePath, template[0]);
 
-  // the file is actually just re-exporting the default export of the original file. We need to resolve this first
-  const exportTemplateFile: string = await fs.readFile(path, {
-    encoding: 'utf-8',
-  });
-  // const importPath = exportTemplateFile.match(/import Mail from '(.+)';/)?.[1];
-  // const originalFilePath = pathJoin(dirname(path), importPath);
+
 
   const reactMarkup: string = await fs.readFile(path, {
     encoding: 'utf-8',
   });
-  // const reactMarkup: string = await fs.readFile(originalFilePath, {
-  //   encoding: 'utf-8',
-  // });
+  
 
   return (
     <Preview
