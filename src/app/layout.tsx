@@ -1,48 +1,23 @@
-import '../styles/globals.css';
-import classnames from 'classnames';
-import localFont  from 'next/font/local';
+import "../styles/globals.css";
+import { Tailwind } from "@react-email/components";
+import classnames from "classnames";
 
 
-// const font_sp_text = localFont({
-// 	src: [
-// 		{
-// 			path: "../../public/assets/fonts/sp-pro-text/SF-Pro-Text-UltraLight.otf",
-// 			weight: "100",
-// 			style: "normal",
-// 		},
-// 		{
-// 			path: "../../public/assets/fonts/sp-pro-text/SF-Pro-Text-Light.otf",
-// 			weight: "200",
-// 			style: "normal",
-// 		},
-// 		{
-// 			path: "../../public/assets/fonts/sp-pro-text/SF-Pro-Text-Thin.otf",
-// 			weight: "300",
-// 			style: "normal",
-// 		},
-// 		{
-// 			path: "../../public/assets/fonts/sp-pro-text/SF-Pro-Text-Regular.otf",
-// 			weight: "400",
-// 			style: "normal",
-// 		},
-		
-// 	],
-
-// 	variable: "--font-sp-text",
-// });
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" >
-      <body className="bg-black text-slate-12 font-sans">
-        <div>
-          {children}
-        </div>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className="bg-black text-slate-12 font-sans">
+				
+					<div className={classnames("font-sf-pro")}>
+						{children}
+					</div>
+
+			</body>
+		</html>
+	);
 }

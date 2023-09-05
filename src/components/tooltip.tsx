@@ -4,7 +4,8 @@ import { TooltipContent } from './tooltip-content';
 
 type RootProps = React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Root>;
 
-export interface TooltipProps extends RootProps {}
+// rome-ignore lint/suspicious/noEmptyInterface: <explanation>
+export  interface TooltipProps extends RootProps {}
 
 export const TooltipRoot: React.FC<Readonly<TooltipProps>> = ({
   children,

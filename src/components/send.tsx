@@ -1,6 +1,5 @@
 import * as Popover from '@radix-ui/react-popover';
 import * as React from 'react';
-import { inter } from '../app/layout';
 import { Button } from './button';
 import { Text } from './text';
 
@@ -38,6 +37,7 @@ export const Send = ({ markup }: { markup: string }) => {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
+        {/* rome-ignore lint/a11y/useButtonType: <explanation> */}
         <button className="box-border outline-none self-center w-20 h-5 flex items-center justify-center rounded-lg text-center transition duration-300 ease-in-out border border-slate-6 text-slate-11 text-sm px-4 py-4 hover:border-slate-12 hover:text-slate-12 font-sans">
           Send
         </button>
@@ -46,7 +46,7 @@ export const Send = ({ markup }: { markup: string }) => {
       <Popover.Portal>
         <Popover.Content
           align="end"
-          className={`w-80 -mt-10 p-3 bg-black border border-slate-6 text-slate-11 rounded-lg font-sans ${inter.variable}`}
+          className={"w-80 -mt-10 p-3 bg-black border border-slate-6 text-slate-11 rounded-lg font-sans"}
         >
           <Popover.Close
             aria-label="Close"
@@ -62,7 +62,6 @@ export const Send = ({ markup }: { markup: string }) => {
               Recipient
             </label>
             <input
-              autoFocus={true}
               className="appearance-none rounded-lg px-2 py-1 mb-3 outline-none w-full bg-slate-3 border placeholder-slate-8 border-slate-6 text-slate-12 text-sm focus:ring-1 focus:ring-slate-12 transition duration-300 ease-in-out"
               onChange={(e) => setTo(e.target.value)}
               defaultValue={to}
