@@ -9,7 +9,7 @@
     "build": "email export"
   },
   "keywords": [],
-  "author": "Collins Igboanugwo!",
+  "author": "Collins Igboanugwo",
   "license": "ISC",
   "dependencies": {
     "@react-email/button": "0.0.10",
