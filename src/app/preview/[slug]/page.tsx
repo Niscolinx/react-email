@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-  console.log({params})
+
   const { emails, filenames } = await getEmails();
   const template = filenames.filter((email) => {
     const [fileName] = email.split('.');
