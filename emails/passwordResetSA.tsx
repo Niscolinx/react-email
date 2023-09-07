@@ -68,7 +68,16 @@ export const PasswordResetSA = ({
 								className="my-0 mx-auto"
 							/>
 
-							<Section className="grid   justify-center my-[2rem]">
+							<Section
+								style={{
+									display: "grid",
+									justifyContent: "center",
+									justifyItems: 'center',
+									margin: "2rem auto",
+									textAlign: "center",
+									
+								}}
+							>
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
 									Password Reset
 								</Heading>
