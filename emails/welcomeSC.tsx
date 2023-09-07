@@ -67,7 +67,7 @@ export const WelcomeSC = ({
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
 							<Img src={welcome} alt="welcome" className="my-0 mx-auto" />
 
-							<Section className="grid   justify-center my-[2rem]">
+							<Section className="mt-[1rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
 									Welcome to SESA Security Company Management
 								</Heading>
@@ -136,7 +136,7 @@ export const WelcomeSC = ({
 							<Button
 								pX={20}
 								pY={12}
-								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
+								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
 								href={inviteLink}
 								style={{
 									boxShadow:

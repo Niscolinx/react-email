@@ -135,7 +135,7 @@ export const WelcomeSA = ({
 							<Button
 								pX={20}
 								pY={12}
-								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
+								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
 								href={inviteLink}
 								style={{
 									boxShadow:
