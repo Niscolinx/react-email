@@ -5,7 +5,6 @@ import {
 	Container,
 	Head,
 	Heading,
-	Hr,
 	Html,
 	Img,
 	Link,
@@ -31,6 +30,10 @@ interface VercelInviteUserEmailProps {
 	adminEmail?: string;
 	generatedPassword?: string;
 	inviteLink?: string;
+	facebookLink?: string;
+	instagramLink?: string;
+	twitterLink?: string;
+	linkedinLink?: string;
 }
 
 export const Welcome = ({
@@ -38,6 +41,10 @@ export const Welcome = ({
 	adminEmail = `Admin's Email Address`,
 	generatedPassword = "Generated Password",
 	inviteLink = "https://sesa.com",
+	facebookLink = "https://sesa.com",
+	instagramLink = "https://sesa.com",
+	twitterLink = "https://sesa.com",
+	linkedinLink = "https://sesa.com",
 }: VercelInviteUserEmailProps) => {
 	const previewText = `Welcome ${adminName} to SESA`;
 
@@ -164,47 +171,55 @@ export const Welcome = ({
 						<Section className="mt-[32px] flex justify-center">
 							<Row className="flex w-max mx-auto">
 								<Column className="px-[3px]">
-									<Img
-										src={facebook}
-										alt="facebook"
-										width={24}
-										height={24}
-										className="my-0 mx-auto"
-									/>
+									<Link href={facebookLink}>
+										<Img
+											src={facebook}
+											alt="facebook"
+											width={34}
+											height={34}
+											className="my-0 mx-auto"
+										/>
+									</Link>
 								</Column>
 								<Column className="px-[3px]">
-									<Img
-										src={instagram}
-										alt="instagram"
-										width={24}
-										height={24}
-										className="my-0 mx-auto"
-									/>
+									<Link href={instagramLink}>
+										<Img
+											src={instagram}
+											alt="instagram"
+											width={34}
+											height={34}
+											className="my-0 mx-auto"
+										/>
+									</Link>
 								</Column>
 								<Column className="px-[3px]">
-									<Img
-										src={twitter}
-										alt="twitter"
-										width={24}
-										height={24}
-										className="my-0 mx-auto"
-									/>
+									<Link href={twitterLink}>
+										<Img
+											src={twitter}
+											alt="twitter"
+											width={34}
+											height={34}
+											className="my-0 mx-auto"
+										/>
+									</Link>
 								</Column>
 								<Column className="px-[3px]">
-									<Img
-										src={linkedin}
-										alt="linkedin"
-										width={24}
-										height={24}
-										className="my-0 mx-auto"
-									/>
+									<Link href={linkedinLink}>
+										<Img
+											src={linkedin}
+											alt="linkedin"
+											width={34}
+											height={34}
+											className="my-0 mx-auto"
+										/>
+									</Link>
 								</Column>
 							</Row>
 
-							<Text className="text-black text-[12px]">
+							<Text className="text-black text-[12px] text-center">
 								This email was sent to you because you are involved with SESA's
 								services. If you believe you received this email in error or
-								have any concerns, please don't hesitate to contact us at
+								have any concerns, please don't hesitate to contact us at{" "}
 								<Link href={inviteLink} className="underline">
 									m-support@sesa.com
 								</Link>
