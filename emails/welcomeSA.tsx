@@ -67,7 +67,7 @@ export const WelcomeSA = ({
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
 							<Img src={welcome} alt="welcome" className="my-0 mx-auto" />
 
-							<Section className=" mt-[1rem]">
+							<Section className="mt-[1rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
 									Welcome to SESA Admin Portal
 								</Heading>
