@@ -26,14 +26,14 @@ import {
 } from "../imageExports";
 
 interface Props {
-	estateName?: string;
-	manageName?: string;
-	generatedPassword?: string;
-	inviteLink?: string;
-	facebookLink?: string;
-	instagramLink?: string;
-	twitterLink?: string;
-	linkedinLink?: string;
+	estateName: string;
+	manageName: string;
+	generatedPassword: string;
+	inviteLink: string;
+	facebookLink: string;
+	instagramLink: string;
+	twitterLink: string;
+	linkedinLink: string;
 }
 
 export const WelcomeEM = ({
@@ -94,8 +94,6 @@ export const WelcomeEM = ({
 									<Column>
 										<Img
 											src={checkBoxFill}
-											// width="100"
-											// height="30"
 											alt="checkBox"
 											className="my-0 mx-0"
 										/>

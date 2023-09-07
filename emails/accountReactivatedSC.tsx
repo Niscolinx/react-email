@@ -66,7 +66,7 @@ export const AccountReactivatedSC = ({
 								className="my-0 mx-auto"
 							/>
 
-							<Section className="grid   justify-center my-[2rem]">
+							<Section className="mt-[1rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
 									You're back online
 								</Heading>
@@ -89,7 +89,7 @@ export const AccountReactivatedSC = ({
 							<Button
 								pX={20}
 								pY={12}
-								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
+								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
 								href={accountLink}
 								style={{
 									boxShadow:
