@@ -103,7 +103,7 @@ export const InvoiceReminder = ({
 										border: "1px solid #EDEEEF",
 										margin: "1rem 0",
 									}}
-									className="rounded-[8px]"
+									className="rounded-[8px] rows-4"
 								>
 									<Column
 										align="center"
