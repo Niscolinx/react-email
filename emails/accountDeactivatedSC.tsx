@@ -1,6 +1,5 @@
 import {
 	Body,
-	Button,
 	Column,
 	Container,
 	Head,
@@ -16,34 +15,34 @@ import {
 } from "@react-email/components";
 import React from "react";
 import {
+	accountDeactivated,
 	facebook,
 	instagram,
 	linkedin,
 	logo,
-	passwordReset,
 	twitter,
 } from "../imageExports";
 
 interface Props {
-	adminName: string;
-  newPassword: string;
-	accountLink: string;
-	facebookLink: string;
-	instagramLink: string;
-	twitterLink: string;
-	linkedinLink: string;
+	manageName?: string;
+	deactivationReason?: string;
+	inviteLink?: string;
+	facebookLink?: string;
+	instagramLink?: string;
+	twitterLink?: string;
+	linkedinLink?: string;
 }
 
-export const PasswordReset = ({
-	adminName = "[Admin's Name]",
-	accountLink = "https://sesa.com",
+export const AccountDeactivatedSC = ({
+	manageName = "[Manager's Name]",
+	deactivationReason = "[Reason for Deactivation]",
+	inviteLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
-  newPassword  = "[New Password]",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = `${adminName}, you're welcome to SESA`;
+	const previewText = `${manageName}, your account has been deactivated`;
 
 	return (
 		<Html>
@@ -63,45 +62,40 @@ export const PasswordReset = ({
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
 							<Img
-								src={passwordReset}
+								src={accountDeactivated}
 								alt="Account Deactivated"
 								className="my-0 mx-auto"
 							/>
 
 							<Section className="grid   justify-center my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
-									Password Reset
+									Your account has been deactivated
 								</Heading>
 							</Section>
 
 							<Section className="grid my-[1rem]">
 								<Text className="text-black text-[14px] my-0">
-									Dear {adminName},
+									Dear {manageName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									Your SESA account password has been reset
+									We regret to inform you that your SESA account has been
+									deactivated.
+								</Text>
+								<Text className="text-black text-[14px] my-0 font-medium">
+									Reason:
+								</Text>
+								<Text className="text-black text-[14px] my-1 ">
+									{deactivationReason}
 								</Text>
 							</Section>
 
-							<Text className="text-black text-[14px] my-0 ml-[5px]">
-								<span className="text-[12px] font-medium">
-									New Password:{" "}
-								</span>
-								<span>{newPassword}</span>
+							<Text className="text-black text-[12px]">
+								If you believe this deactivation is in error or have any
+								questions, please contact us at{" "}
+								<Link href={inviteLink} className="underline">
+									m-support@sesa.com
+								</Link>
 							</Text>
-							<Button
-								pX={20}
-								pY={12}
-								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
-								href={accountLink}
-								style={{
-									boxShadow:
-										"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
-								}}
-							>
-								Login to my account
-							</Button>
-
 							<Text className="text-black text-[14px] leading-[24px]">
 								Best regards,
 								<br />
@@ -119,7 +113,7 @@ export const PasswordReset = ({
 								<Row>
 									<Column align="center">
 										<Link
-											href={accountLink}
+											href={inviteLink}
 											className="text-blue-600  underline text-[12px] text-center "
 										>
 											support@sesa.com
@@ -180,7 +174,7 @@ export const PasswordReset = ({
 								This email was sent to you because you are involved with SESA's
 								services. If you believe you received this email in error or
 								have any concerns, please don't hesitate to contact us at{" "}
-								<Link href={accountLink} className="underline">
+								<Link href={inviteLink} className="underline">
 									m-support@sesa.com
 								</Link>
 							</Text>
@@ -192,4 +186,4 @@ export const PasswordReset = ({
 	);
 };
 
-export default PasswordReset;
+export default AccountDeactivatedSC;
