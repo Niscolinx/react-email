@@ -17,7 +17,6 @@ import {
 } from "@react-email/components";
 import React from "react";
 import {
-	checkBoxFill,
 	facebook,
 	instagram,
 	invoiceReminder,
@@ -57,7 +56,7 @@ export const InvoiceReminder = ({
 			<Preview>{previewText}</Preview>
 			<Tailwind>
 				<Body className="bg-[#E5EFFF] my-auto mx-auto font-sans">
-					<Container className="mx-auto p-[20px] w-full">
+					<Container className="mx-auto p-[20px] w-full ">
 						<Section className="mt-[32px]">
 							<Img
 								src={logo}
@@ -94,22 +93,22 @@ export const InvoiceReminder = ({
 							</Section>
 
 							<Section>
-								<Text className="text-black font-medium text-[16px] ">
+								<Text className="text-black font-medium text-[16px] block text-center">
 									Here's a summary of your subscription details:
 								</Text>
 
-								<Row
+								{/* <Section
 									style={{
 										border: "1px solid #EDEEEF",
 										margin: "1rem 0",
 									}}
-									className="rounded-[8px] rows-4"
+									className="rounded-[8px]"
 								>
 									<Column
-										align="center"
 										style={{
 											borderRight: "1px solid #EDEEEF",
 										}}
+										align="center"
 									>
 										<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 											Subscription Plan
@@ -117,6 +116,13 @@ export const InvoiceReminder = ({
 										<Hr />
 										<Text className="text-black text-[14px] font-medium leading-none">
 											Usage Renewal
+										</Text>
+										<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+											Billing Frequency
+										</Heading>
+										<Hr />
+										<Text className="text-black text-[14px] font-medium leading-none">
+											Monthly
 										</Text>
 									</Column>
 									<Column
@@ -156,109 +162,166 @@ export const InvoiceReminder = ({
 											{nextBillingDate}
 										</Text>
 									</Column>
-								</Row>
+								</Section> */}
+
+								<Section>
+									<Section>
+										<Row className="inline-block flex">
+											<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose flex">
+												Subcription Plan
+											</Heading>
+
+											<Text className="text-black text-[14px] font-medium leading-none">
+												Usage Renewal
+											</Text>
+										</Row>
+
+										
+									</Section>
+									<Section>
+										<Column align="left">
+											<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+												Billing Frequency
+											</Heading>
+										</Column>
+										<Hr />
+										<Column>
+											<Text className="text-black text-[14px] font-medium leading-none">
+												Monthly
+											</Text>
+										</Column>
+									</Section>
+									<Row>
+										<Column>
+											<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+												Amount Due
+											</Heading>
+										</Column>
+										<Hr />
+										<Column>
+											<Text className="text-black text-[14px] font-medium leading-none">
+												{amountDue}
+											</Text>
+										</Column>
+									</Row>
+									<Row>
+										<Column>
+											<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+												Next Billing Date
+											</Heading>
+										</Column>
+										<Hr />
+										<Column>
+											<Text className="text-black text-[14px] font-medium leading-none">
+												{nextBillingDate}
+											</Text>
+										</Column>
+									</Row>
+								</Section>
+
+								<Button
+									pX={20}
+									pY={12}
+									className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
+									href={invoiceLink}
+									style={{
+										boxShadow:
+											"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
+									}}
+								>
+									Open Invoice
+								</Button>
+
+								<Text className="text-black text-[14px] leading-[24px]">
+									If you've already made the payment, please disregard this
+									message. If you have any questions or need assistance, please
+									don't hesitate to contact our support team at{" "}
+									<Link>m-support@sesa.com.</Link>
+								</Text>
+								<Text className="text-black text-[14px] leading-[24px]">
+									Best regards,
+									<br />
+									The SESA Team.
+								</Text>
+								<Section>
+									<Row>
+										<Column align="center">
+											<Heading className="text-black text-[16px] text-center p-0 font-semibold ">
+												Have any questions?
+											</Heading>
+										</Column>
+									</Row>
+									<Row>
+										<Column align="center">
+											<Link
+												href={invoiceLink}
+												className="text-blue-600  underline text-[12px] text-center "
+											>
+												support@sesa.com
+											</Link>
+										</Column>
+									</Row>
+								</Section>
 							</Section>
 
-							<Button
-								pX={20}
-								pY={12}
-								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
-								href={invoiceLink}
-								style={{
-									boxShadow:
-										"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
-								}}
-							>
-								Open Invoice
-							</Button>
-
-							<Text className="text-black text-[14px] leading-[24px]">
-								If you've already made the payment, please disregard this
-								message. If you have any questions or need assistance, please
-								don't hesitate to contact our support team at{" "}
-								<Link>m-support@sesa.com.</Link>
-							</Text>
-							<Text className="text-black text-[14px] leading-[24px]">
-								Best regards,
-								<br />
-								The SESA Team.
-							</Text>
-							<Section>
-								<Row>
-									<Column align="center">
-										<Heading className="text-black text-[16px] text-center p-0 font-semibold ">
-											Have any questions?
-										</Heading>
+							<Section className="mt-[32px] flex justify-center">
+								<Row className="flex w-max mx-auto">
+									<Column className="px-[3px]">
+										<Link href={facebookLink}>
+											<Img
+												src={facebook}
+												alt="facebook"
+												width={34}
+												height={34}
+												className="my-0 mx-auto"
+											/>
+										</Link>
 									</Column>
-								</Row>
-								<Row>
-									<Column align="center">
-										<Link
-											href={invoiceLink}
-											className="text-blue-600  underline text-[12px] text-center "
-										>
-											support@sesa.com
+									<Column className="px-[3px]">
+										<Link href={instagramLink}>
+											<Img
+												src={instagram}
+												alt="instagram"
+												width={34}
+												height={34}
+												className="my-0 mx-auto"
+											/>
+										</Link>
+									</Column>
+									<Column className="px-[3px]">
+										<Link href={twitterLink}>
+											<Img
+												src={twitter}
+												alt="twitter"
+												width={34}
+												height={34}
+												className="my-0 mx-auto"
+											/>
+										</Link>
+									</Column>
+									<Column className="px-[3px]">
+										<Link href={linkedinLink}>
+											<Img
+												src={linkedin}
+												alt="linkedin"
+												width={34}
+												height={34}
+												className="my-0 mx-auto"
+											/>
 										</Link>
 									</Column>
 								</Row>
-							</Section>
-						</Section>
-						<Section className="mt-[32px] flex justify-center">
-							<Row className="flex w-max mx-auto">
-								<Column className="px-[3px]">
-									<Link href={facebookLink}>
-										<Img
-											src={facebook}
-											alt="facebook"
-											width={34}
-											height={34}
-											className="my-0 mx-auto"
-										/>
-									</Link>
-								</Column>
-								<Column className="px-[3px]">
-									<Link href={instagramLink}>
-										<Img
-											src={instagram}
-											alt="instagram"
-											width={34}
-											height={34}
-											className="my-0 mx-auto"
-										/>
-									</Link>
-								</Column>
-								<Column className="px-[3px]">
-									<Link href={twitterLink}>
-										<Img
-											src={twitter}
-											alt="twitter"
-											width={34}
-											height={34}
-											className="my-0 mx-auto"
-										/>
-									</Link>
-								</Column>
-								<Column className="px-[3px]">
-									<Link href={linkedinLink}>
-										<Img
-											src={linkedin}
-											alt="linkedin"
-											width={34}
-											height={34}
-											className="my-0 mx-auto"
-										/>
-									</Link>
-								</Column>
-							</Row>
 
-							<Text className="text-black text-[12px] text-center">
-								This email was sent to you because you are involved with SESA's
-								services. If you believe you received this email in error or
-								have any concerns, please don't hesitate to contact us at{" "}
-								<Link href={invoiceLink} className="underline">
-									m-support@sesa.com
-								</Link>
-							</Text>
+								<Text className="text-black text-[12px] text-center">
+									This email was sent to you because you are involved with
+									SESA's services. If you believe you received this email in
+									error or have any concerns, please don't hesitate to contact
+									us at{" "}
+									<Link href={invoiceLink} className="underline">
+										m-support@sesa.com
+									</Link>
+								</Text>
+							</Section>
 						</Section>
 					</Container>
 				</Body>
