@@ -95,20 +95,16 @@ export const InvoiceReminder = ({
 									Here's a summary of your subscription details:
 								</Text>
 
-
-									<Row>
-										<Column align="center">
-											<Heading className="text-black text-[16px] text-center p-0 font-semibold ">
-												Subscription Details
-											</Heading>
-											<Text className="text-black text-[14px] leading-[24px]">
-												Subscription ID: [Subscription ID]
-											
-											</Text>
-										</Column>
-										
-									</Row>
-
+								<Row>
+									<Column align="center">
+										<Heading className="text-[#595959] text-[12px] text-center p-0 font-semibold ">
+											Subscription Plan
+										</Heading>
+										<Text className="text-black text-[12px] font-medium">
+											Usage Renewal
+										</Text>
+									</Column>
+								</Row>
 							</Section>
 
 							<Button
