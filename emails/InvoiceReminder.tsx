@@ -27,9 +27,9 @@ import {
 
 interface Props {
 	managerName?: string;
-	adminEmail?: string;
+	renewalDate?: string;
 	generatedPassword?: string;
-	inviteLink?: string;
+	invoiceLink?: string;
 	facebookLink?: string;
 	instagramLink?: string;
 	twitterLink?: string;
@@ -38,9 +38,9 @@ interface Props {
 
 export const InvoiceReminder = ({
 	managerName = "[Manager's Name]",
-	adminEmail = `[Admin's Email Address]`,
+	renewalDate = "[Renewal Date]",
 	generatedPassword = "[Generated Password]",
-	inviteLink = "https://sesa.com",
+	invoiceLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
@@ -81,76 +81,54 @@ export const InvoiceReminder = ({
 									Dear {managerName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									We are thrilled to welcome you to the SESA Admin Management
-									portal! As a valued member of our team, you now have access to
-									powerful tools to streamline your tasks and elevate your
-									estate management experience.
+									This is a friendly reminder that your SESA platform usage
+									subscription is due for renewal on {renewalDate}.
+								</Text>
+								<Text className="text-black text-[14px] ">
+									To ensure uninterrupted access to our services, please take a
+									moment to process your payment.
 								</Text>
 							</Section>
+
 							<Section>
-								<Text className="text-black text-[14px]">
-									Your Login Credentials
+								<Text className="text-black font-medium text-[16px] ">
+									Here's a summary of your subscription details:
 								</Text>
 
-								<Row className="flex justify-between">
-									<Column>
-										<Img
-											src={checkBoxFill}
-											// width="100"
-											// height="30"
-											alt="checkBox"
-											className="my-0 mx-0"
-										/>
-									</Column>
-									<Column>
-										<Text className="text-black text-[14px] my-0 ml-[5px]">
-											<span className="text-[12px] font-medium">
-												Username:{" "}
-											</span>
-											<span>{adminEmail}</span>
-										</Text>
-									</Column>
-								</Row>
 
-								<Row className="flex justify-between">
-									<Column>
-										<Img
-											src={checkBoxFill}
-											alt="checkBox"
-											className="my-0 mx-0"
-										/>
-									</Column>
-									<Column>
-										<Text className="text-black text-[14px] my-0 ml-[5px]">
-											<span className="text-[12px] font-medium">
-												Temporary Password:{" "}
-											</span>
-											<span>{generatedPassword}</span>
-										</Text>
-									</Column>
-								</Row>
+									<Row>
+										<Column align="center">
+											<Heading className="text-black text-[16px] text-center p-0 font-semibold ">
+												Subscription Details
+											</Heading>
+											<Text className="text-black text-[14px] leading-[24px]">
+												Subscription ID: [Subscription ID]
+											
+											</Text>
+										</Column>
+										
+									</Row>
+
 							</Section>
-							<Text className="text-black text-[14px]">
-								Please use the button below to accept your invitation and get
-								started.
-							</Text>
 
 							<Button
 								pX={20}
 								pY={12}
 								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
-								href={inviteLink}
+								href={invoiceLink}
 								style={{
 									boxShadow:
 										"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
 								}}
 							>
-								Accept Invitation & Get Started
+								Open Invoice
 							</Button>
 
 							<Text className="text-black text-[14px] leading-[24px]">
-								For security reasons, you will be required to change your
-								password upon your first login.
+								If you've already made the payment, please disregard this
+								message. If you have any questions or need assistance, please
+								don't hesitate to contact our support team at{" "}
+								<Link>m-support@sesa.com.</Link>
 							</Text>
 							<Text className="text-black text-[14px] leading-[24px]">
 								Best regards,
@@ -168,7 +146,7 @@ export const InvoiceReminder = ({
 								<Row>
 									<Column align="center">
 										<Link
-											href={inviteLink}
+											href={invoiceLink}
 											className="text-blue-600  underline text-[12px] text-center "
 										>
 											support@sesa.com
@@ -229,7 +207,7 @@ export const InvoiceReminder = ({
 								This email was sent to you because you are involved with SESA's
 								services. If you believe you received this email in error or
 								have any concerns, please don't hesitate to contact us at{" "}
-								<Link href={inviteLink} className="underline">
+								<Link href={invoiceLink} className="underline">
 									m-support@sesa.com
 								</Link>
 							</Text>
