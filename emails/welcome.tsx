@@ -161,43 +161,53 @@ export const Welcome = ({
 								</Link>
 							</Section>
 						</Section>
-						<Section className="mt-[32px] bg-red-600 flex justify-center">
-							<Row className="flex justify-between bg-blue-600 basis-full justify-items-center">
-								<Column>
-									<Img src={facebook} alt="facebook" className="my-0 mx-auto" />
-								</Column>
-								<Column>
+						<Section className="mt-[32px] flex justify-center">
+							<Row className="flex w-max mx-auto">
+								<Column className="px-[3px]">
 									<Img
-										src={instagram}
-										alt="instagram"
+										src={facebook}
+										alt="facebook"
+										width={24}
+										height={24}
 										className="my-0 mx-auto"
 									/>
 								</Column>
-								<Column>
-									<Img src={twitter} alt="twitter" className="my-0 mx-auto" />
+								<Column className="px-[3px]">
+									<Img
+										src={instagram}
+										alt="instagram"
+										width={24}
+										height={24}
+										className="my-0 mx-auto"
+									/>
 								</Column>
-								<Column>
-									<Img src={linkedin} alt="linkedin" className="my-0 mx-auto" />
+								<Column className="px-[3px]">
+									<Img
+										src={twitter}
+										alt="twitter"
+										width={24}
+										height={24}
+										className="my-0 mx-auto"
+									/>
+								</Column>
+								<Column className="px-[3px]">
+									<Img
+										src={linkedin}
+										alt="linkedin"
+										width={24}
+										height={24}
+										className="my-0 mx-auto"
+									/>
 								</Column>
 							</Row>
 
-							<Row>
-								<Column
-									align="right"
-									style={{ width: "50%", paddingRight: "8px" }}
-								>
-									<Img src={linkedin} alt="linkedin" className="my-0 mx-auto" />
-								</Column>
-								<Column
-									align="left"
-									style={{ width: "50%", paddingLeft: "8px" }}
-								>
-									<Img src={linkedin} alt="linkedin" className="my-0 mx-auto" />
-								</Column>
-							</Row>
-
-							<Text className="text-black text-[14px]">
-								SESA is a registered trademark of SESA Incorporated.
+							<Text className="text-black text-[12px]">
+								This email was sent to you because you are involved with SESA's
+								services. If you believe you received this email in error or
+								have any concerns, please don't hesitate to contact us at
+								<Link href={inviteLink} className="underline">
+									m-support@sesa.com
+								</Link>
 							</Text>
 						</Section>
 					</Container>
