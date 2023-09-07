@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import { Tailwind } from "@react-email/components";
 import classnames from "classnames";
 
 
