@@ -68,16 +68,7 @@ export const PasswordResetSA = ({
 								className="my-0 mx-auto"
 							/>
 
-							<Section
-								style={{
-									display: "grid",
-									justifyContent: "center",
-									justifyItems: 'center',
-									margin: "2rem auto",
-									textAlign: "center",
-									
-								}}
-							>
+							<Section className="my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
 									Password Reset
 								</Heading>
@@ -103,7 +94,7 @@ export const PasswordResetSA = ({
 							<Button
 								pX={20}
 								pY={12}
-								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
+								className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
 								href={accountLink}
 								style={{
 									boxShadow:
