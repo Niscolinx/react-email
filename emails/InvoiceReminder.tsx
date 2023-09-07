@@ -5,6 +5,7 @@ import {
 	Container,
 	Head,
 	Heading,
+	Hr,
 	Html,
 	Img,
 	Link,
@@ -26,20 +27,22 @@ import {
 } from "../imageExports";
 
 interface Props {
-	managerName?: string;
-	renewalDate?: string;
-	generatedPassword?: string;
-	invoiceLink?: string;
-	facebookLink?: string;
-	instagramLink?: string;
-	twitterLink?: string;
-	linkedinLink?: string;
+	managerName: string;
+	renewalDate: string;
+	amountDue: string;
+	nextBillingDate: string;
+	invoiceLink: string;
+	facebookLink: string;
+	instagramLink: string;
+	twitterLink: string;
+	linkedinLink: string;
 }
 
 export const InvoiceReminder = ({
 	managerName = "[Manager's Name]",
 	renewalDate = "[Renewal Date]",
-	generatedPassword = "[Generated Password]",
+	amountDue = "212,050",
+	nextBillingDate = "30-10-23",
 	invoiceLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
@@ -98,11 +101,9 @@ export const InvoiceReminder = ({
 								<Row
 									style={{
 										border: "1px solid #EDEEEF",
-										borderRadius: "8px",
 										margin: "1rem 0",
-										display: "table",
-										borderCollapse: "collapse",
 									}}
+									className="rounded-[8px]"
 								>
 									<Column
 										align="center"
@@ -110,24 +111,49 @@ export const InvoiceReminder = ({
 											borderRight: "1px solid #EDEEEF",
 										}}
 									>
-										<Heading
-											className="text-[#595959] text-[12px] text-center p-0 font-semibold "
-											style={{
-												borderBottom: "1px solid #EDEEEF",
-											}}
-										>
+										<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 											Subscription Plan
 										</Heading>
-										<Text className="text-black text-[12px] font-medium">
+										<Hr />
+										<Text className="text-black text-[14px] font-medium leading-none">
 											Usage Renewal
 										</Text>
 									</Column>
-									<Column align="center">
-										<Heading className="text-[#595959] text-[12px] text-center p-0 font-semibold ">
+									<Column
+										align="center"
+										style={{
+											borderRight: "1px solid #EDEEEF",
+										}}
+									>
+										<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 											Billing Frequency
 										</Heading>
-										<Text className="text-black text-[12px] font-medium">
+										<Hr />
+										<Text className="text-black text-[14px] font-medium leading-none">
 											Monthly
+										</Text>
+									</Column>
+									<Column
+										align="center"
+										style={{
+											borderRight: "1px solid #EDEEEF",
+										}}
+									>
+										<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+											Amount Due
+										</Heading>
+										<Hr />
+										<Text className="text-black text-[14px] font-medium leading-none">
+											{amountDue}
+										</Text>
+									</Column>
+									<Column align="center">
+										<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+											Next Billing Date
+										</Heading>
+										<Hr />
+										<Text className="text-black text-[14px] font-medium leading-none">
+											{nextBillingDate}
 										</Text>
 									</Column>
 								</Row>
