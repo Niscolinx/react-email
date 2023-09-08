@@ -32,8 +32,7 @@ interface Props {
 	twitterLink?: string;
 	linkedinLink?: string;
 }
-
-export const AccountDeactivatedSC = ({
+const AccountDeactivatedSC = ({
 	manageName = "[Manager's Name]",
 	deactivationReason = "[Reason for Deactivation]",
 	inviteLink = "https://sesa.com",

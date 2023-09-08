@@ -33,7 +33,7 @@ interface Props {
 	linkedinLink?: string;
 }
 
-export const AccountReactivatedSA = ({
+const AccountReactivatedSA = ({
 	adminName = "[Admin's Name]",
 	accountLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
@@ -66,14 +66,16 @@ export const AccountReactivatedSA = ({
 								className="my-0 mx-auto"
 							/>
 
-							<Section className="mt-[1rem]
-							">
+							<Section
+								className="mt-[1rem]
+							"
+							>
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
 									You're back online
 								</Heading>
 								<Text className="text-black text-[12px] text-center my-0">
 									Your Security Company Manager account has been reactivated
-									</Text>
+								</Text>
 							</Section>
 
 							<Section className="grid my-[1rem]">
@@ -100,7 +102,6 @@ export const AccountReactivatedSA = ({
 								Go to my Account
 							</Button>
 
-							
 							<Text className="text-black text-[14px] leading-[24px]">
 								Best regards,
 								<br />

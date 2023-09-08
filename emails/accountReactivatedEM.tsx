@@ -32,8 +32,7 @@ interface Props {
 	twitterLink?: string;
 	linkedinLink?: string;
 }
-
-export const AccountReactivatedEM = ({
+const AccountReactivatedEM = ({
 	managerName = "[Manager's Name]",
 	accountLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
