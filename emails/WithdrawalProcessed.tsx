@@ -40,9 +40,9 @@ interface Props {
 const WithdrawalRequest = ({
 	managerName = "[Manager's Name]",
 	date = "[30-10-23]",
-	bankName = "Providus Bank",
-	amountWithdrawn = "591,000",
-	accountNumber = "0093910200",
+	bankName = "[Providus Bank]",
+	amountWithdrawn = "[591,000]",
+	accountNumber = "[0093910200]",
 	invoiceLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
@@ -115,6 +115,7 @@ const WithdrawalRequest = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Date
@@ -136,6 +137,7 @@ const WithdrawalRequest = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														amount withdrawn
@@ -157,6 +159,7 @@ const WithdrawalRequest = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														bank Name
@@ -177,6 +180,7 @@ const WithdrawalRequest = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														account Number

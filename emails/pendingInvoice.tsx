@@ -40,9 +40,9 @@ interface Props {
 const PendingInvoice = ({
 	managerName = "[Manager's Name]",
 	invoiceDate = "[30-10-23]",
-	amountDue = "212,050",
+	amountDue = "[212,050]",
 	invoiceReason = "[invoice_reason]",
-	dueDate = "30-10-23",
+	dueDate = "[30-10-23]",
 	invoiceLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
@@ -115,6 +115,7 @@ const PendingInvoice = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Invoice Date
@@ -136,6 +137,7 @@ const PendingInvoice = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Amount Due
@@ -157,6 +159,7 @@ const PendingInvoice = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Due Date

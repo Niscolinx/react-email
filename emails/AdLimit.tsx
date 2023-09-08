@@ -26,28 +26,26 @@ import {
 
 interface Props {
 	adminName: string;
-	startDate: string;
-	endDate: string;
-	adName: string;
-	adLink: string;
+	previousAdLimit: string;
+	platformSettingsLink: string;
+	newAdLimit: string;
 	facebookLink: string;
 	instagramLink: string;
 	twitterLink: string;
 	linkedinLink: string;
 }
 
-const AdvertNotice = ({
+const AdLimit = ({
 	adminName = "[Admin's Name]",
-	startDate = "[30-10-23]",
-	adName = "[ad_name]",
-	endDate = "[30-10-23]",
-	adLink = "https://sesa.com",
+	previousAdLimit = "[previous_ad_limit]",
+	newAdLimit = "[new_ad_limit]",
+	platformSettingsLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "Ad Expiration Notice";
+	const previewText = "Advertisement Limit";
 
 	return (
 		<Html>
@@ -66,27 +64,25 @@ const AdvertNotice = ({
 							/>
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
-							<Img src={adExpiration} alt="welcome" className="my-0 mx-auto" />
+							<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold">
+								Ad Limit Updated
+							</Heading>
 
-							<Section className="grid   justify-center my-[2rem]">
-								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
-									Notice: Ad Expiration Notice{" "}
-								</Heading>
-							</Section>
-							<Section className="grid justify-center my-[1rem]">
+							<Section className="grid justify-center my-[2rem]">
 								<Text className="text-black text-[14px] my-0">
 									Dear {adminName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									We want to inform you that the ad, {adName} is approaching its
-									end date. Contact the advertiser to find out if they will need
-									an ad renewal.
+									We're writing to inform you that the ad limit on the SESA
+									platform has been successfully updated. The new ad limit has
+									been applied to all estates, ensuring you have control over
+									the number of advertisements running at any given time.
 								</Text>
 							</Section>
 
 							<Section>
 								<Text className="text-black font-medium text-[16px] block text-center">
-									Here are the details of the expiring ads:
+									Here are the details of the update:
 								</Text>
 								<Section className="my-[1rem] capitalize">
 									<table
@@ -111,39 +107,18 @@ const AdvertNotice = ({
 													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Ad Name
+														Previous Ad Limit
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{adName}
+														{previousAdLimit}
 													</Text>
 												</td>
 											</tr>
 											<tr
 												style={{
-													textAlign: "center",
-													borderBottom: "1px solid #EDEEEF",
-												}}
-											>
-												<td
-													style={{
-														borderRight: "1px solid #EDEEEF",
-													}}
-													width={"50%"}
-												>
-													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Start Date
-													</Heading>
-												</td>
-												<td>
-													<Text className="text-black text-[14px] font-medium leading-none">
-														{startDate}
-													</Text>
-												</td>
-											</tr>
-											<tr
-												style={{
+													
 													textAlign: "center",
 												}}
 											>
@@ -154,12 +129,12 @@ const AdvertNotice = ({
 													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														End Date
+														New Ad Limit
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{endDate}
+														{newAdLimit}
 													</Text>
 												</td>
 											</tr>
@@ -170,13 +145,13 @@ const AdvertNotice = ({
 									pX={20}
 									pY={12}
 									className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
-									href={adLink}
+									href={platformSettingsLink}
 									style={{
 										boxShadow:
 											"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
 									}}
 								>
-									Go to this Ad
+									Go to platform settings
 								</Button>
 
 								<Text className="text-black text-[14px] leading-[24px]">
@@ -200,7 +175,7 @@ const AdvertNotice = ({
 									<Row>
 										<Column align="center">
 											<Link
-												href={adLink}
+												href={platformSettingsLink}
 												className="text-blue-600  underline text-[12px] text-center "
 											>
 												support@sesa.com
@@ -262,7 +237,7 @@ const AdvertNotice = ({
 								This email was sent to you because you are involved with SESA's
 								services. If you believe you received this email in error or
 								have any concerns, please don't hesitate to contact us at{" "}
-								<Link href={adLink} className="underline">
+								<Link href={platformSettingsLink} className="underline">
 									m-support@sesa.com
 								</Link>
 							</Text>
@@ -274,4 +249,4 @@ const AdvertNotice = ({
 	);
 };
 
-export default AdvertNotice;
+export default AdLimit;

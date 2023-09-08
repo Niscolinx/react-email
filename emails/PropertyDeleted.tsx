@@ -35,7 +35,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-const AdminUpdate = ({
+const PropertyDeleted = ({
 	adminName = "[Admin's Name]",
 	propertyName = "[new_property_name]",
 	propertyDescription = "[new_property_description]",
@@ -45,7 +45,7 @@ const AdminUpdate = ({
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "Property Update";
+	const previewText = "Property Deleted";
 
 	return (
 		<Html>
@@ -65,7 +65,7 @@ const AdminUpdate = ({
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
 							<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold">
-								Property Information Update
+								Property Deleted
 							</Heading>
 
 							<Section className="grid justify-center my-[2rem]">
@@ -73,14 +73,15 @@ const AdminUpdate = ({
 									Dear {adminName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									We want to inform you that some updates have been made to a
-									property or property unit information on the SESA platform.
+									We want to inform you about an important update regarding one
+									of the properties on the SESA platform. A property, with the
+									details listed below, has been deleted:
 								</Text>
 							</Section>
 
 							<Section>
 								<Text className="text-black font-medium text-[16px] block text-center">
-									Here are the details of the expiring ads:
+									Here are the details of the update:
 								</Text>
 								<Section className="my-[1rem] capitalize">
 									<table
@@ -102,6 +103,7 @@ const AdminUpdate = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Property Name
@@ -247,4 +249,4 @@ const AdminUpdate = ({
 	);
 };
 
-export default AdminUpdate;
+export default PropertyDeleted;

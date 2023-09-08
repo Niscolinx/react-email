@@ -25,6 +25,8 @@ import {
 } from "../imageExports";
 
 interface Props {
+	subscriptionPlan: string;
+	billingFrequency: string;
 	managerName: string;
 	renewalDate: string;
 	amountDue: string;
@@ -37,10 +39,12 @@ interface Props {
 }
 
 const InvoiceReminder = ({
+	subscriptionPlan = "[Usage Renewal]",
+	billingFrequency = "[Monthly]",
 	managerName = "[Manager's Name]",
 	renewalDate = "[Renewal Date]",
-	amountDue = "212,050",
-	nextBillingDate = "30-10-23",
+	amountDue = "[212,050]",
+	nextBillingDate = "[30-10-23]",
 	invoiceLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
@@ -115,6 +119,7 @@ const InvoiceReminder = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Subscription Plan
@@ -122,7 +127,7 @@ const InvoiceReminder = ({
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														Usage Renewal
+														{subscriptionPlan}
 													</Text>
 												</td>
 											</tr>
@@ -136,6 +141,7 @@ const InvoiceReminder = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Billing Frequency
@@ -143,7 +149,7 @@ const InvoiceReminder = ({
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														Monthly{" "}
+														{billingFrequency}
 													</Text>
 												</td>
 											</tr>
@@ -157,6 +163,7 @@ const InvoiceReminder = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Amount Due
@@ -177,6 +184,7 @@ const InvoiceReminder = ({
 													style={{
 														borderRight: "1px solid #EDEEEF",
 													}}
+													width={"50%"}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Next Billing Date
