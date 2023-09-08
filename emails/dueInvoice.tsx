@@ -16,11 +16,11 @@ import {
 } from "@react-email/components";
 import React from "react";
 import {
+    dueInvoice,
 	facebook,
 	instagram,
 	linkedin,
 	logo,
-	pendingInvoice,
 	twitter,
 } from "../imageExports";
 
@@ -37,7 +37,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const PendingInvoice = ({
+export const DueInvoice = ({
 	managerName = "[Manager's Name]",
 	invoiceDate = "[30-10-23]",
 	amountDue = "212,050",
@@ -68,15 +68,11 @@ export const PendingInvoice = ({
 							/>
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
-							<Img
-								src={pendingInvoice}
-								alt="welcome"
-								className="my-0 mx-auto"
-							/>
+							<Img src={dueInvoice} alt="welcome" className="my-0 mx-auto" />
 
 							<Section className="grid   justify-center my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
-									You have a pending invoice{" "}
+									You have a due invoice{" "}
 								</Heading>
 							</Section>
 							<Section className="grid justify-center my-[1rem]">
@@ -84,9 +80,9 @@ export const PendingInvoice = ({
 									Dear {managerName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									We wanted to bring to your attention that there is a pending
-									invoice for your SESA platform usage subscription. Your
-									subscription is essential to maintain uninterrupted access to
+									We'd like to remind you that there is an outstanding invoice
+									that requires your attention. This invoice is now due, and
+									timely payment is crucial to maintain uninterrupted access to
 									our services.
 								</Text>
 							</Section>
@@ -301,4 +297,4 @@ export const PendingInvoice = ({
 	);
 };
 
-export default PendingInvoice;
+export default DueInvoice;
