@@ -19,9 +19,9 @@ import React from "react";
 import {
 	facebook,
 	instagram,
-	invoiceReminder,
 	linkedin,
 	logo,
+	pendingInvoice,
 	twitter,
 } from "../imageExports";
 
@@ -37,7 +37,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const InvoiceReminder = ({
+export const PendingInvoice = ({
 	managerName = "[Manager's Name]",
 	renewalDate = "[Renewal Date]",
 	amountDue = "212,050",
@@ -68,7 +68,7 @@ export const InvoiceReminder = ({
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
 							<Img
-								src={invoiceReminder}
+								src={pendingInvoice}
 								alt="welcome"
 								className="my-0 mx-auto"
 							/>
@@ -302,4 +302,4 @@ export const InvoiceReminder = ({
 	);
 };
 
-export default InvoiceReminder;
+export default PendingInvoice;
