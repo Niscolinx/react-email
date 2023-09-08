@@ -7,8 +7,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-        "email": "email dev",
-        "export": "email export",
+		"email": "email dev",
+		"export": "ts-node export-to-html.ts",
 		"lint": "next lint",
 		"format:check": "prettier --check \"**/*.{ts,tsx,md}\"",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\""

@@ -8,6 +8,7 @@ import {
 	Img,
 	Link,
 	Preview,
+	render,
 	Row,
 	Section,
 	Tailwind,
@@ -33,7 +34,7 @@ interface Props {
 	linkedinLink?: string;
 }
 
- const AccountDeactivatedEM = ({
+const AccountDeactivatedEM = ({
 	manageName = "[Manager's Name]",
 	deactivationReason = "[Reason for Deactivation]",
 	inviteLink = "https://sesa.com",
@@ -185,5 +186,6 @@ interface Props {
 		</Html>
 	);
 };
+
 
 export default AccountDeactivatedEM;
