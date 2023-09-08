@@ -16,12 +16,12 @@ import {
 } from "@react-email/components";
 import React from "react";
 import {
+	adExpiration,
 	facebook,
 	instagram,
 	linkedin,
 	logo,
 	twitter,
-	withdrawalRejected,
 } from "../imageExports";
 
 interface Props {
@@ -36,7 +36,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const WithdrawalRejected = ({
+export const AdvertManagement = ({
 	managerName = "[Manager's Name]",
 	date = "[30-10-23]",
 	amountWithdrawn = "212,050",
@@ -67,7 +67,7 @@ export const WithdrawalRejected = ({
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
 							<Img
-								src={withdrawalRejected}
+								src={adExpiration}
 								alt="welcome"
 								className="my-0 mx-auto"
 							/>
