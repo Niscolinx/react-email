@@ -1,7 +1,10 @@
 
-function exportToHtml() {
+ function exportToHtml() {
     console.log('Hello World');
+
+    return 'hello'
 
 }
 
-export default exportToHtml
+export default exportToHtml;
+
