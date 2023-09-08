@@ -165,58 +165,34 @@ export const InvoiceReminder = ({
 								</Section> */}
 
 								<Section>
-									<Section>
-										<Row className="inline-block flex">
-											<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose flex">
-												Subcription Plan
-											</Heading>
-
-											<Text className="text-black text-[14px] font-medium leading-none">
-												Usage Renewal
-											</Text>
-										</Row>
-
-										
-									</Section>
-									<Section>
-										<Column align="left">
-											<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-												Billing Frequency
-											</Heading>
-										</Column>
-										<Hr />
-										<Column>
-											<Text className="text-black text-[14px] font-medium leading-none">
-												Monthly
-											</Text>
-										</Column>
-									</Section>
-									<Row>
-										<Column>
-											<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-												Amount Due
-											</Heading>
-										</Column>
-										<Hr />
-										<Column>
-											<Text className="text-black text-[14px] font-medium leading-none">
-												{amountDue}
-											</Text>
-										</Column>
-									</Row>
-									<Row>
-										<Column>
-											<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-												Next Billing Date
-											</Heading>
-										</Column>
-										<Hr />
-										<Column>
-											<Text className="text-black text-[14px] font-medium leading-none">
-												{nextBillingDate}
-											</Text>
-										</Column>
-									</Row>
+									<table>
+										<tbody>
+											<tr>
+												<td>
+													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+														Subscription Plan
+													</Heading>
+												</td>
+												<td>
+													<Text className="text-black text-[14px] font-medium leading-none">
+														Usage Renewal
+													</Text>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+														Subscription Plan
+													</Heading>
+												</td>
+												<td>
+													<Text className="text-black text-[14px] font-medium leading-none">
+														Usage Renewal
+													</Text>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</Section>
 
 								<Button
