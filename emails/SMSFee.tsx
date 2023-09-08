@@ -15,35 +15,30 @@ import {
 	Text,
 } from "@react-email/components";
 import React from "react";
-import {
-	adExpiration,
-	facebook,
-	instagram,
-	linkedin,
-	logo,
-	twitter,
-} from "../imageExports";
+import { facebook, instagram, linkedin, logo, twitter } from "../imageExports";
 
 interface Props {
 	adminName: string;
+	oldFee: string;
+	newFee: string;
 	platformSettingsLink: string;
-	sosName: string;
 	facebookLink: string;
 	instagramLink: string;
 	twitterLink: string;
 	linkedinLink: string;
 }
 
-const SOSDeleted = ({
+const SMSFee = ({
 	adminName = "[Admin's Name]",
-	sosName = "[SOS_service_name]",
+	oldFee = "[old_fee]",
+	newFee = "[new_fee]",
 	platformSettingsLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "SOS Deleted";
+	const previewText = "SMS Fee";
 
 	return (
 		<Html>
@@ -63,7 +58,7 @@ const SOSDeleted = ({
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
 							<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold">
-								SOS Service Deleted
+								Fee update: SMS Fee
 							</Heading>
 
 							<Section className="grid justify-center my-[2rem]">
@@ -71,12 +66,71 @@ const SOSDeleted = ({
 									Dear {adminName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									This message is to inform you that the {sosName} SOS
-									service has been deleted from the SESA platform.
+									We trust this message finds you well. We'd like to inform you
+									that there has been an update to the SMS fee.
 								</Text>
 							</Section>
 
 							<Section>
+								<Text className="text-black font-medium text-[16px] block text-center">
+									Here are the details of the update:
+								</Text>
+								<Section className="my-[1rem] capitalize">
+									<table
+										className="w-full"
+										style={{
+											outline: "1px solid #EDEEEF",
+											borderRadius: "8px",
+											borderCollapse: "collapse",
+										}}
+									>
+										<tbody>
+											<tr
+												style={{
+													borderBottom: "1px solid #EDEEEF",
+													textAlign: "center",
+												}}
+											>
+												<td
+													style={{
+														borderRight: "1px solid #EDEEEF",
+													}}
+													width={"50%"}
+												>
+													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+														Old Fee
+													</Heading>
+												</td>
+												<td>
+													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+														New Fee
+													</Heading>
+												</td>
+											</tr>
+											<tr
+												style={{
+													textAlign: "center",
+												}}
+											>
+												<td
+													style={{
+														borderRight: "1px solid #EDEEEF",
+													}}
+													width={"50%"}
+												>
+													<Text className="text-black text-[14px] font-medium leading-none">
+														{oldFee}
+													</Text>
+												</td>
+												<td>
+													<Text className="text-black text-[14px] font-medium leading-none">
+														{newFee}
+													</Text>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</Section>
 								<Button
 									pX={20}
 									pY={12}
@@ -185,4 +239,4 @@ const SOSDeleted = ({
 	);
 };
 
-export default SOSDeleted;
+export default SMSFee;

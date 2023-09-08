@@ -16,7 +16,6 @@ import {
 } from "@react-email/components";
 import React from "react";
 import {
-	adExpiration,
 	facebook,
 	instagram,
 	linkedin,
