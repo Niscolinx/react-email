@@ -36,7 +36,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const WithdrawalRejected = ({
+ const WithdrawalRejected = ({
 	managerName = "[Manager's Name]",
 	date = "[30-10-23]",
 	amountWithdrawn = "212,050",

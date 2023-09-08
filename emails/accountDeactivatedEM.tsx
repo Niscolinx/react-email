@@ -33,7 +33,7 @@ interface Props {
 	linkedinLink?: string;
 }
 
-export const AccountDeactivatedEM = ({
+ const AccountDeactivatedEM = ({
 	manageName = "[Manager's Name]",
 	deactivationReason = "[Reason for Deactivation]",
 	inviteLink = "https://sesa.com",
