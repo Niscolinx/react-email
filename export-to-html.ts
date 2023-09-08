@@ -5,7 +5,7 @@ import { getEmails } from "@/utils/get-emails";
 
 
 async function exportToHtml() {
-	const {  filenames } = await getEmails();
+	const { filenames } = await getEmails();
 
 
 	const Email = (await import(`./emails/AdLimit`)).default;
@@ -22,25 +22,29 @@ async function exportToHtml() {
 	// });
 
 	// console.log({ markup })
-	const basePath = pathJoin(process.cwd());
+	const basePath = pathJoin(process.cwd(), 'out');
 
-	const writeTo =  await fs.mkdir(pathJoin(basePath, "out"), {
-		recursive: true
-	});
+	try {
 
-	if (!writeTo) {
-		console.log("error")
-		return;
+		const writeTo = await fs.mkdir(basePath, {
+			recursive: true
+		});
+		console.log({ writeTo })
+		 await fs.writeFile(`${basePath}/test.html`, markup)
+	}
+	catch (e) {
+		console.log({ e })
 	}
 
 
-	await fs.writeFile(pathJoin(writeTo, "out/emails.html"), markup, {
 
-		encoding: "utf-8",
-	}
-	);
 
-	console.log({ basePath })
+
+
+	// 	encoding: "utf-8",
+	// }
+	// );
+
 
 
 
