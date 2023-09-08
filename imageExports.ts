@@ -16,5 +16,5 @@ export const passwordReset = `${baseUrl}/images/passwordReset.png`
 export const pendingInvoice = `${baseUrl}/images/pendingInvoice.png`
 export const welcome = `${baseUrl}/images/welcome.png`
 export const withdrawalRejected = `${baseUrl}/images/withdrawalRejected.png`
-export const withdrawalSuccess = `${baseUrl}/images/withdrawalSuccess.png`
+export const withdrawalProcessed = `${baseUrl}/images/withdrawalProcessed.png`
 

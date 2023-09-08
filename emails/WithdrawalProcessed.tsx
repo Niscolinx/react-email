@@ -20,8 +20,8 @@ import {
 	instagram,
 	linkedin,
 	logo,
-	newInvoice,
 	twitter,
+	withdrawalProcessed,
 } from "../imageExports";
 
 interface Props {
@@ -38,7 +38,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const NewInvoice = ({
+export const WithdrawalRequest = ({
 	estateName = "[estate_name]",
 	managerName = "[Manager's Name]",
 	invoiceDate = "[30-10-23]",
@@ -70,7 +70,11 @@ export const NewInvoice = ({
 							/>
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
-							<Img src={newInvoice} alt="welcome" className="my-0 mx-auto" />
+							<Img
+								src={withdrawalProcessed}
+								alt="welcome"
+								className="my-0 mx-auto"
+							/>
 
 							<Section className="grid   justify-center my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
@@ -308,4 +312,4 @@ export const NewInvoice = ({
 	);
 };
 
-export default NewInvoice;
+export default WithdrawalRequest;
