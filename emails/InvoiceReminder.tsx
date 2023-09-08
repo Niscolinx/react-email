@@ -95,7 +95,7 @@ export const InvoiceReminder = ({
 								<Text className="text-black font-medium text-[16px] block text-center">
 									Here's a summary of your subscription details:
 								</Text>
-								<Section className="my-[1rem]">
+								<Section className="my-[1rem] capitalize">
 									<table
 										className="w-full"
 										style={{

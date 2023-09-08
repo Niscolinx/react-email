@@ -93,9 +93,9 @@ export const WithdrawalRequest = ({
 
 							<Section>
 								<Text className="text-black font-medium text-[16px] block text-center">
-									Here's a summary of your subscription details:
+									Here are the details of your withdrawal:
 								</Text>
-								<Section className="my-[1rem]">
+								<Section className="my-[1rem] capitalize">
 									<table
 										className="w-full"
 										style={{
@@ -117,28 +117,7 @@ export const WithdrawalRequest = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Reason
-													</Heading>
-												</td>
-												<td>
-													<Text className="text-black text-[14px] font-medium leading-none">
-														{amountWithdrawn}
-													</Text>
-												</td>
-											</tr>
-											<tr
-												style={{
-													textAlign: "center",
-													borderBottom: "1px solid #EDEEEF",
-												}}
-											>
-												<td
-													style={{
-														borderRight: "1px solid #EDEEEF",
-													}}
-												>
-													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Invoice Date
+														Date
 													</Heading>
 												</td>
 												<td>
@@ -159,7 +138,28 @@ export const WithdrawalRequest = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Amount Due
+														amount withdrawn
+													</Heading>
+												</td>
+												<td>
+													<Text className="text-black text-[14px] font-medium leading-none">
+														{amountWithdrawn}
+													</Text>
+												</td>
+											</tr>
+											<tr
+												style={{
+													textAlign: "center",
+													borderBottom: "1px solid #EDEEEF",
+												}}
+											>
+												<td
+													style={{
+														borderRight: "1px solid #EDEEEF",
+													}}
+												>
+													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+														bank Name
 													</Heading>
 												</td>
 												<td>
@@ -179,7 +179,7 @@ export const WithdrawalRequest = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Due Date
+														account Number
 													</Heading>
 												</td>
 												<td>
@@ -192,29 +192,14 @@ export const WithdrawalRequest = ({
 									</table>
 
 									<Text className="text-black text-[14px] leading-[24px] text-center font-medium">
-										Please review the invoice details, ensure accuracy, and make
-										the necessary payment arrangements before the due date to
-										avoid any service interruptions.
+										You can expect the funds to be credited to your account
+										within the standard processing time, depending on your bank.
 									</Text>
 								</Section>
 
-								<Button
-									pX={20}
-									pY={12}
-									className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
-									href={invoiceLink}
-									style={{
-										boxShadow:
-											"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
-									}}
-								>
-									Open Invoice
-								</Button>
-
 								<Text className="text-black text-[14px] leading-[24px]">
-									If you've already made the payment, please disregard this
-									message. If you have any questions or need assistance, please
-									don't hesitate to contact our support team at{" "}
+									If you have any questions or need assistance, please don't
+									hesitate to contact our support team at{" "}
 									<Link>m-support@sesa.com.</Link>
 								</Text>
 								<Text className="text-black text-[14px] leading-[24px]">

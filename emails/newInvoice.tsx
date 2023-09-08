@@ -96,7 +96,7 @@ export const NewInvoice = ({
 								<Text className="text-black font-medium text-[16px] block text-center">
 									Here's a summary of your invoice details:
 								</Text>
-								<Section className="my-[1rem]">
+								<Section className="my-[1rem] capitalize">
 									<table
 										className="w-full"
 										style={{
@@ -213,9 +213,8 @@ export const NewInvoice = ({
 								</Button>
 
 								<Text className="text-black text-[14px] leading-[24px]">
-									If you've already made the payment, please disregard this
-									message. If you have any questions or need assistance, please
-									don't hesitate to contact our support team at{" "}
+									If you have any questions or need assistance, please don't
+									hesitate to contact our support team at{" "}
 									<Link>m-support@sesa.com.</Link>
 								</Text>
 								<Text className="text-black text-[14px] leading-[24px]">

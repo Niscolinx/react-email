@@ -16,20 +16,19 @@ import {
 } from "@react-email/components";
 import React from "react";
 import {
-	dueInvoice,
 	facebook,
 	instagram,
 	linkedin,
 	logo,
 	twitter,
+	withdrawalRejected,
 } from "../imageExports";
 
 interface Props {
 	managerName: string;
-	invoiceDate: string;
-	invoiceReason: string;
-	amountDue: string;
-	dueDate: string;
+	date: string;
+	rejectionReason: string;
+	amountWithdrawn: string;
 	invoiceLink: string;
 	facebookLink: string;
 	instagramLink: string;
@@ -37,19 +36,18 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const DueInvoice = ({
+export const WithdrawalRejected = ({
 	managerName = "[Manager's Name]",
-	invoiceDate = "[30-10-23]",
-	amountDue = "212,050",
-	invoiceReason = "[invoice_reason]",
-	dueDate = "30-10-23",
+	date = "[30-10-23]",
+	amountWithdrawn = "212,050",
+	rejectionReason = "[rejection_reason]",
 	invoiceLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "Due Invoice";
+	const previewText = "Withdrawal Rejection";
 
 	return (
 		<Html>
@@ -68,11 +66,15 @@ export const DueInvoice = ({
 							/>
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
-							<Img src={dueInvoice} alt="welcome" className="my-0 mx-auto" />
+							<Img
+								src={withdrawalRejected}
+								alt="welcome"
+								className="my-0 mx-auto"
+							/>
 
 							<Section className="grid   justify-center my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
-									You have a due invoice{" "}
+									Withdrawal Request Rejected{" "}
 								</Heading>
 							</Section>
 							<Section className="grid justify-center my-[1rem]">
@@ -80,20 +82,19 @@ export const DueInvoice = ({
 									Dear {managerName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									We'd like to remind you that there is an outstanding invoice
-									that requires your attention. This invoice is now due, and
-									timely payment is crucial to maintain uninterrupted access to
-									our services.
+									We regret to inform you that your recent withdrawal request
+									has been rejected. There may be various reasons for this,
+									incorrect account information, or other issues.
 								</Text>
 							</Section>
 
 							<Section>
 								<Text className="text-black font-medium text-[16px] block text-center">
-									Here's a summary of your invoice details:
+									Here are the details of your rejected withdrawal request{" "}
 								</Text>
-								<Section className="my-[1rem]">
+								<Section className="my-[1rem] capitalize">
 									<table
-										className="w-full capitalize"
+										className="w-full"
 										style={{
 											outline: "1px solid #EDEEEF",
 											borderRadius: "8px",
@@ -113,12 +114,12 @@ export const DueInvoice = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Reason
+														Date
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{invoiceReason}
+														{date}
 													</Text>
 												</td>
 											</tr>
@@ -134,33 +135,12 @@ export const DueInvoice = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Invoice Date
+														Amount Withdrawn
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{invoiceDate}
-													</Text>
-												</td>
-											</tr>
-											<tr
-												style={{
-													textAlign: "center",
-													borderBottom: "1px solid #EDEEEF",
-												}}
-											>
-												<td
-													style={{
-														borderRight: "1px solid #EDEEEF",
-													}}
-												>
-													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Amount Due
-													</Heading>
-												</td>
-												<td>
-													<Text className="text-black text-[14px] font-medium leading-none">
-														{amountDue}
+														{amountWithdrawn}
 													</Text>
 												</td>
 											</tr>
@@ -175,19 +155,18 @@ export const DueInvoice = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Due Date
+														Rejection Reason
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{dueDate}
+														{rejectionReason}
 													</Text>
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</Section>
-
 								<Button
 									pX={20}
 									pY={12}
@@ -198,14 +177,18 @@ export const DueInvoice = ({
 											"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
 									}}
 								>
-									Open Invoice
+									Go to my account
 								</Button>
+								<Text className="text-black text-[14px] leading-[24px] text-center font-medium">
+									To resolve this matter and ensure a smooth withdrawal process,
+									please review the reason for rejection carefully and take
+									appropriate action
+								</Text>
 
 								<Text className="text-black text-[14px] leading-[24px]">
-									If you've already made the payment, please disregard this
-									message. If you have any questions or need assistance, please
-									don't hesitate to contact our support team at{" "}
-									<Link>m-support@sesa.com.</Link>
+									If you believe there was an error in the withdrawal request or
+									if you have any questions, please don't hesitate to contact
+									our support team at <Link>m-support@sesa.com.</Link>
 								</Text>
 								<Text className="text-black text-[14px] leading-[24px]">
 									Best regards,
@@ -297,4 +280,4 @@ export const DueInvoice = ({
 	);
 };
 
-export default DueInvoice;
+export default AdvertManagement;
