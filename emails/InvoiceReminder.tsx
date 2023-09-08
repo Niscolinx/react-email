@@ -93,10 +93,6 @@ export const InvoiceReminder = ({
 							</Section>
 
 							<Section>
-								<Text className="text-black font-medium text-[16px] block text-center">
-									Here's a summary of your subscription details:
-								</Text>
-
 								{/* <Section
 									style={{
 										border: "1px solid #EDEEEF",
@@ -163,12 +159,29 @@ export const InvoiceReminder = ({
 										</Text>
 									</Column>
 								</Section> */}
-
-								<Section>
-									<table>
+								<Text className="text-black font-medium text-[16px] block text-center">
+									Here's a summary of your subscription details:
+								</Text>
+								<Section className="my-[1rem]">
+									<table
+										className="w-full"
+										style={{
+											border: "1px solid #EDEEEF",
+											borderRadius: "8px",
+										}}
+									>
 										<tbody>
-											<tr>
-												<td>
+											<tr
+												style={{
+													borderBottom: "1px solid black",
+													textAlign: "center",
+												}}
+											>
+												<td
+													style={{
+														borderRight: "1px solid #EDEEEF",
+													}}
+												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
 														Subscription Plan
 													</Heading>
@@ -180,14 +193,53 @@ export const InvoiceReminder = ({
 												</td>
 											</tr>
 											<tr>
-												<td>
+												<td
+													style={{
+														borderRight: "1px solid #EDEEEF",
+														textAlign: "center",
+													}}
+												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Subscription Plan
+														Billing Frequency
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														Usage Renewal
+														Monthly{" "}
+													</Text>
+												</td>
+											</tr>
+											<tr>
+												<td
+													style={{
+														borderRight: "1px solid #EDEEEF",
+														textAlign: "center",
+													}}
+												>
+													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+														Amount Due
+													</Heading>
+												</td>
+												<td>
+													<Text className="text-black text-[14px] font-medium leading-none">
+														{amountDue}
+													</Text>
+												</td>
+											</tr>
+											<tr>
+												<td
+													style={{
+														borderRight: "1px solid #EDEEEF",
+														textAlign: "center",
+													}}
+												>
+													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+														Next Billing Date
+													</Heading>
+												</td>
+												<td>
+													<Text className="text-black text-[14px] font-medium leading-none">
+														{nextBillingDate}
 													</Text>
 												</td>
 											</tr>
@@ -198,7 +250,7 @@ export const InvoiceReminder = ({
 								<Button
 									pX={20}
 									pY={12}
-									className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center flex  justify-center"
+									className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
 									href={invoiceLink}
 									style={{
 										boxShadow:
@@ -239,65 +291,63 @@ export const InvoiceReminder = ({
 									</Row>
 								</Section>
 							</Section>
-
-							<Section className="mt-[32px] flex justify-center">
-								<Row className="flex w-max mx-auto">
-									<Column className="px-[3px]">
-										<Link href={facebookLink}>
-											<Img
-												src={facebook}
-												alt="facebook"
-												width={34}
-												height={34}
-												className="my-0 mx-auto"
-											/>
-										</Link>
-									</Column>
-									<Column className="px-[3px]">
-										<Link href={instagramLink}>
-											<Img
-												src={instagram}
-												alt="instagram"
-												width={34}
-												height={34}
-												className="my-0 mx-auto"
-											/>
-										</Link>
-									</Column>
-									<Column className="px-[3px]">
-										<Link href={twitterLink}>
-											<Img
-												src={twitter}
-												alt="twitter"
-												width={34}
-												height={34}
-												className="my-0 mx-auto"
-											/>
-										</Link>
-									</Column>
-									<Column className="px-[3px]">
-										<Link href={linkedinLink}>
-											<Img
-												src={linkedin}
-												alt="linkedin"
-												width={34}
-												height={34}
-												className="my-0 mx-auto"
-											/>
-										</Link>
-									</Column>
-								</Row>
-
-								<Text className="text-black text-[12px] text-center">
-									This email was sent to you because you are involved with
-									SESA's services. If you believe you received this email in
-									error or have any concerns, please don't hesitate to contact
-									us at{" "}
-									<Link href={invoiceLink} className="underline">
-										m-support@sesa.com
+						</Section>
+						<Section className="mt-[32px] flex justify-center">
+							<Row className="flex w-max mx-auto">
+								<Column className="px-[3px]">
+									<Link href={facebookLink}>
+										<Img
+											src={facebook}
+											alt="facebook"
+											width={34}
+											height={34}
+											className="my-0 mx-auto"
+										/>
 									</Link>
-								</Text>
-							</Section>
+								</Column>
+								<Column className="px-[3px]">
+									<Link href={instagramLink}>
+										<Img
+											src={instagram}
+											alt="instagram"
+											width={34}
+											height={34}
+											className="my-0 mx-auto"
+										/>
+									</Link>
+								</Column>
+								<Column className="px-[3px]">
+									<Link href={twitterLink}>
+										<Img
+											src={twitter}
+											alt="twitter"
+											width={34}
+											height={34}
+											className="my-0 mx-auto"
+										/>
+									</Link>
+								</Column>
+								<Column className="px-[3px]">
+									<Link href={linkedinLink}>
+										<Img
+											src={linkedin}
+											alt="linkedin"
+											width={34}
+											height={34}
+											className="my-0 mx-auto"
+										/>
+									</Link>
+								</Column>
+							</Row>
+
+							<Text className="text-black text-[12px] text-center">
+								This email was sent to you because you are involved with SESA's
+								services. If you believe you received this email in error or
+								have any concerns, please don't hesitate to contact us at{" "}
+								<Link href={invoiceLink} className="underline">
+									m-support@sesa.com
+								</Link>
+							</Text>
 						</Section>
 					</Container>
 				</Body>
