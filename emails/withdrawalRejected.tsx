@@ -29,7 +29,7 @@ interface Props {
 	date: string;
 	rejectionReason: string;
 	amountWithdrawn: string;
-	invoiceLink: string;
+	accountLink: string;
 	facebookLink: string;
 	instagramLink: string;
 	twitterLink: string;
@@ -41,7 +41,7 @@ export const WithdrawalRejected = ({
 	date = "[30-10-23]",
 	amountWithdrawn = "212,050",
 	rejectionReason = "[rejection_reason]",
-	invoiceLink = "https://sesa.com",
+	accountLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
@@ -172,7 +172,7 @@ export const WithdrawalRejected = ({
 										pX={20}
 										pY={12}
 										className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
-										href={invoiceLink}
+										href={accountLink}
 										style={{
 											boxShadow:
 												"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
@@ -207,7 +207,7 @@ export const WithdrawalRejected = ({
 									<Row>
 										<Column align="center">
 											<Link
-												href={invoiceLink}
+												href={accountLink}
 												className="text-blue-600  underline text-[12px] text-center "
 											>
 												support@sesa.com
@@ -269,7 +269,7 @@ export const WithdrawalRejected = ({
 								This email was sent to you because you are involved with SESA's
 								services. If you believe you received this email in error or
 								have any concerns, please don't hesitate to contact us at{" "}
-								<Link href={invoiceLink} className="underline">
+								<Link href={accountLink} className="underline">
 									m-support@sesa.com
 								</Link>
 							</Text>

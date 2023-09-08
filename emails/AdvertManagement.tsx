@@ -25,9 +25,9 @@ import {
 } from "../imageExports";
 
 interface Props {
-	managerName: string;
-	date: string;
-	rejectionReason: string;
+	adminName: string;
+	startDate: string;
+	endDate: string;
 	amountWithdrawn: string;
 	invoiceLink: string;
 	facebookLink: string;
@@ -37,17 +37,17 @@ interface Props {
 }
 
 export const AdvertManagement = ({
-	managerName = "[Manager's Name]",
-	date = "[30-10-23]",
+	adminName = "[Admin's Name]",
+	startDate = "[30-10-23]",
 	amountWithdrawn = "212,050",
-	rejectionReason = "[rejection_reason]",
+	endDate = "[rejection_reason]",
 	invoiceLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "Withdrawal Rejection";
+	const previewText = "Ad Expiration Notice";
 
 	return (
 		<Html>
@@ -66,20 +66,16 @@ export const AdvertManagement = ({
 							/>
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
-							<Img
-								src={adExpiration}
-								alt="welcome"
-								className="my-0 mx-auto"
-							/>
+							<Img src={adExpiration} alt="welcome" className="my-0 mx-auto" />
 
 							<Section className="grid   justify-center my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
-									Withdrawal Request Rejected{" "}
+									Notice: Ad Expiration Notice{" "}
 								</Heading>
 							</Section>
 							<Section className="grid justify-center my-[1rem]">
 								<Text className="text-black text-[14px] my-0">
-									Dear {managerName},
+									Dear {adminName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
 									We regret to inform you that your recent withdrawal request
@@ -119,7 +115,7 @@ export const AdvertManagement = ({
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{date}
+														{start}
 													</Text>
 												</td>
 											</tr>
@@ -160,7 +156,7 @@ export const AdvertManagement = ({
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{rejectionReason}
+														{endDate}
 													</Text>
 												</td>
 											</tr>
