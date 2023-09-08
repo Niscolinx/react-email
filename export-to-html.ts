@@ -1,31 +1,40 @@
 import { render } from "@react-email/render";
-import { promises as fs } from "fs";
+import { mkdir, promises as fs } from "fs";
 import { join as pathJoin } from "path";
-import { CONTENT_DIR, getEmails } from "@/utils/get-emails";
+import { getEmails } from "@/utils/get-emails";
 
 
 async function exportToHtml() {
 	const { emails, filenames } = await getEmails();
 
-	console.log(emails)
-	
 
+	const Email = (await import(`./emails/AdLimit`)).default;
+	const Email1 = (await import(`./emails/KYCFee`)).default;
 
-	// const template = filenames.filter((email) => {
-	// 	const [fileName] = email.split(".");
-	// 	return params.slug === fileName;
-	// });
+	console.log(filenames)
 
-	// const Email = (await import(`../../../../emails/${params.slug}`)).default;
-	// const markup = render(Email(), { pretty: true });
-	// const basePath = pathJoin(process.cwd(), CONTENT_DIR);
+	// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+	const markup = render([Email({} as any), Email1({} as any)], { pretty: true });
 	// const path = pathJoin(basePath, template[0]);
 
 	// const reactMarkup: string = await fs.readFile(path, {
 	// 	encoding: "utf-8",
 	// });
 
-	console.log('hello world ')
+	// console.log({ markup })
+	const basePath = pathJoin(process.cwd());
+
+
+
+	await fs.writeFile(pathJoin(basePath, "out/emails.html"), markup, {
+
+		encoding: "utf-8",
+	}
+	);
+
+	console.log({ basePath })
+
+
 
 }
 
