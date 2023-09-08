@@ -28,8 +28,8 @@ interface Props {
 	adminName: string;
 	startDate: string;
 	endDate: string;
-	amountWithdrawn: string;
-	invoiceLink: string;
+	adName: string;
+	adLink: string;
 	facebookLink: string;
 	instagramLink: string;
 	twitterLink: string;
@@ -39,9 +39,9 @@ interface Props {
 export const AdvertManagement = ({
 	adminName = "[Admin's Name]",
 	startDate = "[30-10-23]",
-	amountWithdrawn = "212,050",
-	endDate = "[rejection_reason]",
-	invoiceLink = "https://sesa.com",
+	adName = "[ad_name]",
+	endDate = "[30-10-23]",
+	adLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
@@ -78,15 +78,15 @@ export const AdvertManagement = ({
 									Dear {adminName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									We regret to inform you that your recent withdrawal request
-									has been rejected. There may be various reasons for this,
-									incorrect account information, or other issues.
+									We want to inform you that the ad, {adName} is approaching its
+									end date. Contact the advertiser to find out if they will need
+									an ad renewal.
 								</Text>
 							</Section>
 
 							<Section>
 								<Text className="text-black font-medium text-[16px] block text-center">
-									Here are the details of your rejected withdrawal request{" "}
+									Here are the details of the expiring ads:
 								</Text>
 								<Section className="my-[1rem] capitalize">
 									<table
@@ -110,12 +110,12 @@ export const AdvertManagement = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Date
+														Ad Name
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{start}
+														{adName}
 													</Text>
 												</td>
 											</tr>
@@ -131,12 +131,12 @@ export const AdvertManagement = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Amount Withdrawn
+														Start Date
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{amountWithdrawn}
+														{startDate}
 													</Text>
 												</td>
 											</tr>
@@ -151,7 +151,7 @@ export const AdvertManagement = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Rejection Reason
+														End Date
 													</Heading>
 												</td>
 												<td>
@@ -167,24 +167,19 @@ export const AdvertManagement = ({
 									pX={20}
 									pY={12}
 									className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
-									href={invoiceLink}
+									href={adLink}
 									style={{
 										boxShadow:
 											"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
 									}}
 								>
-									Go to my account
+									Go to this Ad
 								</Button>
-								<Text className="text-black text-[14px] leading-[24px] text-center font-medium">
-									To resolve this matter and ensure a smooth withdrawal process,
-									please review the reason for rejection carefully and take
-									appropriate action
-								</Text>
 
 								<Text className="text-black text-[14px] leading-[24px]">
-									If you believe there was an error in the withdrawal request or
-									if you have any questions, please don't hesitate to contact
-									our support team at <Link>m-support@sesa.com.</Link>
+									If you have any questions or need assistance, please feel free
+									to contact our support team at {" "}
+									<Link>m-support@sesa.com.</Link>
 								</Text>
 								<Text className="text-black text-[14px] leading-[24px]">
 									Best regards,
@@ -202,7 +197,7 @@ export const AdvertManagement = ({
 									<Row>
 										<Column align="center">
 											<Link
-												href={invoiceLink}
+												href={adLink}
 												className="text-blue-600  underline text-[12px] text-center "
 											>
 												support@sesa.com
@@ -264,7 +259,7 @@ export const AdvertManagement = ({
 								This email was sent to you because you are involved with SESA's
 								services. If you believe you received this email in error or
 								have any concerns, please don't hesitate to contact us at{" "}
-								<Link href={invoiceLink} className="underline">
+								<Link href={adLink} className="underline">
 									m-support@sesa.com
 								</Link>
 							</Text>
