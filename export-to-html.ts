@@ -4,10 +4,10 @@ import { join as pathJoin } from "path";
 import { getEmails } from "@/utils/get-emails";
 
 
+export const basePath = pathJoin(process.cwd(), 'out');
 async function exportToHtml() {
 	const { filenames, emails } = await getEmails();
 
-	const basePath = pathJoin(process.cwd(), 'out');
 
 	try {
 		await fs.mkdir(basePath, {

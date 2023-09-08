@@ -9,12 +9,15 @@ import {
 	Img,
 	Link,
 	Preview,
+	render,
 	Row,
 	Section,
 	Tailwind,
 	Text,
 } from "@react-email/components";
+import { promises as fs } from "fs";
 import React from "react";
+import { basePath } from "../export-to-html";
 import { facebook, instagram, linkedin, logo, twitter } from "../imageExports";
 
 interface Props {
@@ -240,3 +243,14 @@ const PanicAlertUsage = ({
 };
 
 export default PanicAlertUsage;
+
+// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+const markup = render(PanicAlertUsage({} as any), {
+	pretty: true,
+});
+
+export const Email = async () => {
+	await fs.writeFile(`${basePath}/tester.html`, markup);
+};
+
+Email();
