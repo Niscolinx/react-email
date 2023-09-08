@@ -17,6 +17,13 @@ export async function generateStaticParams() {
 
 async function exportToHtml() {
 	const { emails, filenames } = await getEmails();
+
+	console.log(emails)
+	console.log(filenames)
+	const params = generateStaticParams()
+	console.log({params})
+
+
 	// const template = filenames.filter((email) => {
 	// 	const [fileName] = email.split(".");
 	// 	return params.slug === fileName;
