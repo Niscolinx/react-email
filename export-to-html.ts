@@ -5,33 +5,26 @@ import { getEmails } from "@/utils/get-emails";
 
 
 async function exportToHtml() {
-	const { filenames } = await getEmails();
+	const { filenames, emails } = await getEmails();
 
-
-	const Email = (await import(`./emails/AdLimit`)).default;
-	const Email1 = (await import(`./emails/KYCFee`)).default;
-
-	console.log(filenames)
-
-	// rome-ignore lint/suspicious/noExplicitAny: <explanation>
-	const markup = render([Email({} as any), Email1({} as any)], { pretty: true });
-	// const path = pathJoin(basePath, template[0]);
-
-	// const reactMarkup: string = await fs.readFile(path, {
-	// 	encoding: "utf-8",
-	// });
-
-	// console.log({ markup })
 	const basePath = pathJoin(process.cwd(), 'out');
 
 	try {
-
-		const writeTo = await fs.mkdir(basePath, {
-			recursive: true
+		await fs.mkdir(basePath, {
+			recursive: true,
 		});
-		console.log({ writeTo })
-		 await fs.writeFile(`${basePath}/test.html`, markup)
+
+
+		for (let i = 0; i < emails.length; i++) {
+			const name = emails[i]
+			const Email = (await import(`./emails/${name}`)).default;
+
+			const htmlMarkup = render(Email({} as unknown), { pretty: true });
+
+			await fs.writeFile(`${basePath}/${name}.html`, htmlMarkup);
+		}
 	}
+	
 	catch (e) {
 		console.log({ e })
 	}
