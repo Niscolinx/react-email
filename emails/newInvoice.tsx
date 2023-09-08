@@ -108,27 +108,6 @@ const NewInvoice = ({
 										<tbody>
 											<tr
 												style={{
-													borderBottom: "1px solid #EDEEEF",
-													textAlign: "center",
-												}}
-											>
-												<td
-													style={{
-														borderRight: "1px solid #EDEEEF",
-													}}
-												>
-													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Reason
-													</Heading>
-												</td>
-												<td>
-													<Text className="text-black text-[14px] font-medium leading-none">
-														{invoiceReason}
-													</Text>
-												</td>
-											</tr>
-											<tr
-												style={{
 													textAlign: "center",
 													borderBottom: "1px solid #EDEEEF",
 												}}
@@ -172,6 +151,7 @@ const NewInvoice = ({
 											<tr
 												style={{
 													textAlign: "center",
+													borderBottom: "1px solid #EDEEEF",
 												}}
 											>
 												<td
@@ -186,6 +166,29 @@ const NewInvoice = ({
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
 														{dueDate}
+													</Text>
+												</td>
+											</tr>
+											<tr
+												style={{
+													textAlign: "center",
+													borderBottom: "1px solid #EDEEEF",
+												}}
+											>
+												<td colSpan={2}>
+													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
+														Invoice Reason
+													</Heading>
+												</td>
+											</tr>
+											<tr
+												style={{
+													textAlign: "center",
+												}}
+											>
+												<td align="center" colSpan={2}>
+													<Text className="text-black text-[14px] font-medium leading-none px-2 text-center">
+														{invoiceReason}
 													</Text>
 												</td>
 											</tr>

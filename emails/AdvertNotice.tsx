@@ -16,7 +16,7 @@ import {
 } from "@react-email/components";
 import React from "react";
 import {
-	dueInvoice,
+	adExpiration,
 	facebook,
 	instagram,
 	linkedin,
@@ -25,31 +25,29 @@ import {
 } from "../imageExports";
 
 interface Props {
-	managerName: string;
-	invoiceDate: string;
-	invoiceReason: string;
-	amountDue: string;
-	dueDate: string;
-	invoiceLink: string;
+	adminName: string;
+	startDate: string;
+	endDate: string;
+	adName: string;
+	adLink: string;
 	facebookLink: string;
 	instagramLink: string;
 	twitterLink: string;
 	linkedinLink: string;
 }
 
-const DueInvoice = ({
-	managerName = "[Manager's Name]",
-	invoiceDate = "[30-10-23]",
-	amountDue = "212,050",
-	invoiceReason = "[invoice_reason]",
-	dueDate = "30-10-23",
-	invoiceLink = "https://sesa.com",
+const AdvertNotice = ({
+	adminName = "[Admin's Name]",
+	startDate = "[30-10-23]",
+	adName = "[ad_name]",
+	endDate = "[30-10-23]",
+	adLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "Due Invoice";
+	const previewText = "Ad Expiration Notice";
 
 	return (
 		<Html>
@@ -68,32 +66,31 @@ const DueInvoice = ({
 							/>
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
-							<Img src={dueInvoice} alt="welcome" className="my-0 mx-auto" />
+							<Img src={adExpiration} alt="welcome" className="my-0 mx-auto" />
 
 							<Section className="grid   justify-center my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
-									You have a due invoice{" "}
+									Notice: Ad Expiration Notice{" "}
 								</Heading>
 							</Section>
 							<Section className="grid justify-center my-[1rem]">
 								<Text className="text-black text-[14px] my-0">
-									Dear {managerName},
+									Dear {adminName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									We'd like to remind you that there is an outstanding invoice
-									that requires your attention. This invoice is now due, and
-									timely payment is crucial to maintain uninterrupted access to
-									our services.
+									We want to inform you that the ad, {adName} is approaching its
+									end date. Contact the advertiser to find out if they will need
+									an ad renewal.
 								</Text>
 							</Section>
 
 							<Section>
 								<Text className="text-black font-medium text-[16px] block text-center">
-									Here's a summary of your invoice details:
+									Here are the details of the expiring ads:
 								</Text>
-								<Section className="my-[1rem]">
+								<Section className="my-[1rem] capitalize">
 									<table
-										className="w-full capitalize"
+										className="w-full"
 										style={{
 											outline: "1px solid #EDEEEF",
 											borderRadius: "8px",
@@ -103,8 +100,8 @@ const DueInvoice = ({
 										<tbody>
 											<tr
 												style={{
-													textAlign: "center",
 													borderBottom: "1px solid #EDEEEF",
+													textAlign: "center",
 												}}
 											>
 												<td
@@ -113,12 +110,12 @@ const DueInvoice = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Invoice Date
+														Ad Name
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{invoiceDate}
+														{adName}
 													</Text>
 												</td>
 											</tr>
@@ -134,19 +131,18 @@ const DueInvoice = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Amount Due
+														Start Date
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{amountDue}
+														{startDate}
 													</Text>
 												</td>
 											</tr>
 											<tr
 												style={{
 													textAlign: "center",
-													borderBottom: "1px solid #EDEEEF",
 												}}
 											>
 												<td
@@ -155,59 +151,34 @@ const DueInvoice = ({
 													}}
 												>
 													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Due Date
+														End Date
 													</Heading>
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{dueDate}
-													</Text>
-												</td>
-											</tr>
-											<tr
-												style={{
-													textAlign: "center",
-													borderBottom: "1px solid #EDEEEF",
-												}}
-											>
-												<td colSpan={2}>
-													<Heading className="text-[#595959] text-[12px] text-center font-normal leading-loose">
-														Invoice Reason
-													</Heading>
-												</td>
-											</tr>
-											<tr
-												style={{
-													textAlign: "center",
-												}}
-											>
-												<td align="center" colSpan={2}>
-													<Text className="text-black text-[14px] font-medium leading-none px-2 text-center">
-														{invoiceReason}
+														{endDate}
 													</Text>
 												</td>
 											</tr>
 										</tbody>
 									</table>
 								</Section>
-
 								<Button
 									pX={20}
 									pY={12}
 									className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
-									href={invoiceLink}
+									href={adLink}
 									style={{
 										boxShadow:
 											"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
 									}}
 								>
-									Open Invoice
+									Go to this Ad
 								</Button>
 
 								<Text className="text-black text-[14px] leading-[24px]">
-									If you've already made the payment, please disregard this
-									message. If you have any questions or need assistance, please
-									don't hesitate to contact our support team at{" "}
+									If you have any questions or need assistance, please feel free
+									to contact our support team at{" "}
 									<Link>m-support@sesa.com.</Link>
 								</Text>
 								<Text className="text-black text-[14px] leading-[24px]">
@@ -226,7 +197,7 @@ const DueInvoice = ({
 									<Row>
 										<Column align="center">
 											<Link
-												href={invoiceLink}
+												href={adLink}
 												className="text-blue-600  underline text-[12px] text-center "
 											>
 												support@sesa.com
@@ -288,7 +259,7 @@ const DueInvoice = ({
 								This email was sent to you because you are involved with SESA's
 								services. If you believe you received this email in error or
 								have any concerns, please don't hesitate to contact us at{" "}
-								<Link href={invoiceLink} className="underline">
+								<Link href={adLink} className="underline">
 									m-support@sesa.com
 								</Link>
 							</Text>
@@ -300,4 +271,4 @@ const DueInvoice = ({
 	);
 };
 
-export default DueInvoice;
+export default AdvertNotice;
