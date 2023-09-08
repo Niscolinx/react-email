@@ -16,11 +16,11 @@ import {
 } from "@react-email/components";
 import React from "react";
 import {
-	dueInvoice,
 	facebook,
 	instagram,
 	linkedin,
 	logo,
+	newInvoice,
 	twitter,
 } from "../imageExports";
 
@@ -37,7 +37,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const DueInvoice = ({
+export const NewInvoice = ({
 	managerName = "[Manager's Name]",
 	invoiceDate = "[30-10-23]",
 	amountDue = "212,050",
@@ -49,7 +49,7 @@ export const DueInvoice = ({
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "Due Invoice";
+	const previewText = "New Invoice";
 
 	return (
 		<Html>
@@ -68,11 +68,11 @@ export const DueInvoice = ({
 							/>
 						</Section>
 						<Section className="mt-[32px] bg-white p-[20px] rounded-lg shadow">
-							<Img src={dueInvoice} alt="welcome" className="my-0 mx-auto" />
+							<Img src={newInvoice} alt="welcome" className="my-0 mx-auto" />
 
 							<Section className="grid   justify-center my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
-									You have a due invoice{" "}
+									New Invoice: Action Required{" "}
 								</Heading>
 							</Section>
 							<Section className="grid justify-center my-[1rem]">
@@ -297,4 +297,4 @@ export const DueInvoice = ({
 	);
 };
 
-export default DueInvoice;
+export default NewInvoice;

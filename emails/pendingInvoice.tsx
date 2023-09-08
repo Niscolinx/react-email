@@ -49,7 +49,7 @@ export const PendingInvoice = ({
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "Invoice Reminder";
+	const previewText = "Pending Reminder";
 
 	return (
 		<Html>
