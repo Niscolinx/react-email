@@ -36,7 +36,7 @@ interface Props {
 	linkedinLink?: string;
 }
 
-export const WelcomeSA = ({
+const WelcomeSA = ({
 	adminName = "[Admin's Name]",
 	adminEmail = `[Admin's Email Address]`,
 	generatedPassword = "[Generated Password]",

@@ -34,7 +34,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const PasswordResetSA = ({
+const PasswordResetSA = ({
 	adminName = "[Admin's Name]",
 	accountLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",

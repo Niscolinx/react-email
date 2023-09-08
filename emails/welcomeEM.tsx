@@ -36,7 +36,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const WelcomeEM = ({
+const WelcomeEM = ({
 	estateName = "[estate_name]",
 	manageName = `[Manager's name]`,
 	generatedPassword = "[Generated Password]",

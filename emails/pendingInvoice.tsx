@@ -37,7 +37,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const PendingInvoice = ({
+const PendingInvoice = ({
 	managerName = "[Manager's Name]",
 	invoiceDate = "[30-10-23]",
 	amountDue = "212,050",

@@ -36,7 +36,7 @@ interface Props {
 	linkedinLink: string;
 }
 
- const WithdrawalRejected = ({
+const WithdrawalRejected = ({
 	managerName = "[Manager's Name]",
 	date = "[30-10-23]",
 	amountWithdrawn = "212,050",
@@ -166,25 +166,24 @@ interface Props {
 											</tr>
 										</tbody>
 									</table>
-
 								</Section>
-									<Button
-										pX={20}
-										pY={12}
-										className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
-										href={accountLink}
-										style={{
-											boxShadow:
-												"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
-										}}
-									>
-										Go to my account
-									</Button>
-									<Text className="text-black text-[14px] leading-[24px] text-center font-medium">
-										To resolve this matter and ensure a smooth withdrawal
-										process, please review the reason for rejection carefully
-										and take appropriate action
-									</Text>
+								<Button
+									pX={20}
+									pY={12}
+									className="bg-[#0660FE] rounded text-white text-[12px] font-semibold no-underline text-center block"
+									href={accountLink}
+									style={{
+										boxShadow:
+											"1.2px 1.2px 1px 0px #7AAAFF inset, -1.2px -1.2px 1px 0px rgba(122, 170, 255, 0.60) inset",
+									}}
+								>
+									Go to my account
+								</Button>
+								<Text className="text-black text-[14px] leading-[24px] text-center font-medium">
+									To resolve this matter and ensure a smooth withdrawal process,
+									please review the reason for rejection carefully and take
+									appropriate action
+								</Text>
 
 								<Text className="text-black text-[14px] leading-[24px]">
 									If you believe there was an error in the withdrawal request or

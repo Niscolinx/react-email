@@ -38,7 +38,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const NewInvoice = ({
+const NewInvoice = ({
 	estateName = "[estate_name]",
 	managerName = "[Manager's Name]",
 	invoiceDate = "[30-10-23]",

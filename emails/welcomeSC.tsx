@@ -36,7 +36,7 @@ interface Props {
 	linkedinLink?: string;
 }
 
-export const WelcomeSC = ({
+const WelcomeSC = ({
 	companyName = "[security_company_name]",
 	manageName = `[Manager's name]`,
 	generatedPassword = "[Generated Password]",
@@ -82,7 +82,7 @@ export const WelcomeSC = ({
 								<Text className="text-black text-[14px] my-1 ">
 									Welcome to SESA Security Company Management, your
 									comprehensive solution for efficient security services. We're
-									excited to have you join us 
+									excited to have you join us
 								</Text>
 							</Section>
 							<Section>

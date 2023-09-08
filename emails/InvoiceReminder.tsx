@@ -36,7 +36,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const InvoiceReminder = ({
+const InvoiceReminder = ({
 	managerName = "[Manager's Name]",
 	renewalDate = "[Renewal Date]",
 	amountDue = "212,050",

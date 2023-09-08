@@ -36,7 +36,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const AdvertManagement = ({
+const AdvertManagement = ({
 	adminName = "[Admin's Name]",
 	startDate = "[30-10-23]",
 	adName = "[ad_name]",
@@ -178,7 +178,7 @@ export const AdvertManagement = ({
 
 								<Text className="text-black text-[14px] leading-[24px]">
 									If you have any questions or need assistance, please feel free
-									to contact our support team at {" "}
+									to contact our support team at{" "}
 									<Link>m-support@sesa.com.</Link>
 								</Text>
 								<Text className="text-black text-[14px] leading-[24px]">

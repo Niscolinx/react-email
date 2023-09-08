@@ -37,7 +37,7 @@ interface Props {
 	linkedinLink: string;
 }
 
-export const WithdrawalRequest = ({
+const WithdrawalRequest = ({
 	managerName = "[Manager's Name]",
 	date = "[30-10-23]",
 	bankName = "Providus Bank",
