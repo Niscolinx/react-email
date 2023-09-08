@@ -1,7 +1,6 @@
 {
 	"name": "react-email-client",
 	"version": "0.0.14",
-	"type": "module",
 	"description": "The React Email preview application",
 	"license": "MIT",
 	"scripts": {
@@ -9,7 +8,7 @@
 		"build": "next build",
 		"start": "next start",
 		"email": "email dev",
-		"export": "tsx ./src/utils/export-to-html.ts",
+		"export": "tsx export-to-html.ts",
 		"lint": "next lint",
 		"format:check": "prettier --check \"**/*.{ts,tsx,md}\"",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\""

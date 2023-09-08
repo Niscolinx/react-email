@@ -38,7 +38,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "export-to-html.ts"  ],
   "exclude": [
     "node_modules"
   ]
