@@ -93,7 +93,7 @@ export const PendingInvoice = ({
 
 							<Section>
 								<Text className="text-black font-medium text-[16px] block text-center">
-									Here's a summary of your subscription details:
+									Here's a summary of your invoice details:
 								</Text>
 								<Section className="my-[1rem]">
 									<table

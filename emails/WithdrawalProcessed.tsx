@@ -26,11 +26,10 @@ import {
 
 interface Props {
 	managerName: string;
-	estateName: string;
-	invoiceDate: string;
-	invoiceReason: string;
-	amountDue: string;
-	dueDate: string;
+	date: string;
+	amountWithdrawn: string;
+	bankName: string;
+	accountNumber: string;
 	invoiceLink: string;
 	facebookLink: string;
 	instagramLink: string;
@@ -39,19 +38,18 @@ interface Props {
 }
 
 export const WithdrawalRequest = ({
-	estateName = "[estate_name]",
 	managerName = "[Manager's Name]",
-	invoiceDate = "[30-10-23]",
-	amountDue = "212,050",
-	invoiceReason = "[invoice_reason]",
-	dueDate = "30-10-23",
+	date = "[30-10-23]",
+	bankName = "Providus Bank",
+	amountWithdrawn = "591,000",
+	accountNumber = "0093910200",
 	invoiceLink = "https://sesa.com",
 	facebookLink = "https://sesa.com",
 	instagramLink = "https://sesa.com",
 	twitterLink = "https://sesa.com",
 	linkedinLink = "https://sesa.com",
 }: Props) => {
-	const previewText = "New Invoice";
+	const previewText = "Withdrawal Processed";
 
 	return (
 		<Html>
@@ -78,7 +76,7 @@ export const WithdrawalRequest = ({
 
 							<Section className="grid   justify-center my-[2rem]">
 								<Heading className="text-black text-[24px] text-center p-0 mx-0 font-semibold my-0">
-									New Invoice: Action Required{" "}
+									Withdrawal Request Processed!{" "}
 								</Heading>
 							</Section>
 							<Section className="grid justify-center my-[1rem]">
@@ -86,13 +84,10 @@ export const WithdrawalRequest = ({
 									Dear {managerName},
 								</Text>
 								<Text className="text-black text-[14px] my-1 ">
-									We wanted to inform you that a new invoice has been generated
-									for your estate, {estateName} on the SESA platform. This
-									invoice requires your prompt attention.
-								</Text>
-								<Text className="text-black text-[14px] ">
-									To ensure uninterrupted access to our services, please take a
-									moment to process your payment.
+									We are pleased to inform you that your recent withdrawal
+									request has been processed successfully. The funds you
+									requested are now on their way to your designated bank
+									account.
 								</Text>
 							</Section>
 
@@ -127,7 +122,7 @@ export const WithdrawalRequest = ({
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{invoiceReason}
+														{amountWithdrawn}
 													</Text>
 												</td>
 											</tr>
@@ -148,7 +143,7 @@ export const WithdrawalRequest = ({
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{invoiceDate}
+														{date}
 													</Text>
 												</td>
 											</tr>
@@ -169,7 +164,7 @@ export const WithdrawalRequest = ({
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{amountDue}
+														{bankName}
 													</Text>
 												</td>
 											</tr>
@@ -189,7 +184,7 @@ export const WithdrawalRequest = ({
 												</td>
 												<td>
 													<Text className="text-black text-[14px] font-medium leading-none">
-														{dueDate}
+														{accountNumber}
 													</Text>
 												</td>
 											</tr>
