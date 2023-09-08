@@ -8,7 +8,7 @@
 		"build": "next build",
 		"start": "next start",
 		"email": "email dev",
-		"export": "tsx export-to-html.ts",
+		"export": "tsx export-to-html.tsx",
 		"lint": "next lint",
 		"format:check": "prettier --check \"**/*.{ts,tsx,md}\"",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\""
